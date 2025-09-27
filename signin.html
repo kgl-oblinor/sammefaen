@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Vision UI Dashboard</title>
+    
+    <!-- Google Fonts - Plus Jakarta Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Display:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Colors from Vision UI */
+            --primary: #4318ff;
+            --primary-focus: #9f7aea;
+            --info: #0075ff;
+            --success: #01b574;
+            --error: #e31a1a;
+            --warning: #ffb547;
+            
+            /* Dark theme colors */
+            --bg-body: #030c1d;
+            --bg-secondary: #0f1535;
+            --bg-card-gradient: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);
+            
+            /* Text colors */
+            --text-white: #ffffff;
+            --text-main: #a0aec0;
+            --text-dim: #718096;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            font-size: 16px;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Background Image */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://demos.creative-tim.com/vision-ui-dashboard-react/static/media/signInImage.af921364.png') center/cover;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        
+        /* Gradient Overlay */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, var(--bg-body) 70%);
+            z-index: -1;
+        }
+        
+        .signin-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 24px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .signin-card {
+            background: var(--bg-card-gradient);
+            backdrop-filter: blur(120px);
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 27px rgba(0, 0, 0, 0.05);
+        }
+        
+        .signin-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .welcome-back {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+        
+        .signin-subtitle {
+            font-size: 14px;
+            color: var(--text-main);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            color: var(--text-white);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-input {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: var(--text-white);
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 24, 255, 0.1);
+        }
+        
+        .form-input::placeholder {
+            color: var(--text-dim);
+        }
+        
+        .remember-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        
+        .checkbox.checked {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .checkbox.checked::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .checkbox-label {
+            font-size: 14px;
+            color: var(--text-main);
+            user-select: none;
+        }
+        
+        .signin-btn {
+            width: 100%;
+            background: linear-gradient(97.89deg, #4318ff 0%, #9f7aea 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 14px rgba(67, 24, 255, 0.4);
+        }
+        
+        .signin-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(67, 24, 255, 0.5);
+        }
+        
+        .signin-footer {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+        
+        .signin-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        
+        .signin-footer a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Back to Dashboard Link */
+        .back-link {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--text-white);
+        }
+        
+        /* Social Login */
+        .social-divider {
+            text-align: center;
+            margin: 24px 0;
+            position: relative;
+        }
+        
+        .social-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-divider span {
+            background: var(--bg-card-gradient);
+            padding: 0 16px;
+            position: relative;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--bg-secondary);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 10px;
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .social-btn i {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <a href="vision-ui-exact-replica.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back to Dashboard
+    </a>
+    
+    <div class="signin-container">
+        <div class="signin-card">
+            <div class="signin-header">
+                <h1 class="welcome-back">Welcome Back</h1>
+                <p class="signin-subtitle">Enter your email and password to sign in</p>
+            </div>
+            
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="Your email address">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" placeholder="Your password">
+                </div>
+                
+                <div class="remember-container">
+                    <div class="checkbox-container" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span class="checkbox-label">Remember me</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="signin-btn">SIGN IN</button>
+                
+                <div class="social-divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="social-buttons">
+                    <a href="#" class="social-btn">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <i class="fab fa-apple"></i>
+                    </a>
+                    <a href="#" class="social-btn">
+                        <i class="fab fa-google"></i>
+                    </a>
+                </div>
+            </form>
+            
+            <div class="signin-footer">
+                Don't have an account? <a href="signup.html">Sign up</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleCheckbox(container) {
+            const checkbox = container.querySelector('.checkbox');
+            checkbox.classList.toggle('checked');
+        }
+    </script>
+</body>
+</html>

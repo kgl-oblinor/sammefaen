@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Documentation - OBLINOR EQUITY HUB</title>
+    <meta name="description" content="Access comprehensive documentation, API references, tutorials, and case studies for OBLINOR EQUITY HUB. Find all the resources you need to get started.">
+    <meta name="keywords" content="OBLINOR, documentation, API reference, tutorials, case studies, resources">
+    <meta property="og:title" content="Resources & Documentation - OBLINOR EQUITY HUB">
+    <meta property="og:description" content="Comprehensive resources and documentation for OBLINOR EQUITY HUB">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #008C9E;
+            --primary-dark: #007889;
+            --secondary: #00B4CC;
+            --accent: #00DFFC;
+            --dark: #1a1f1f;
+            --darker: #0f1515;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --gray-dark: #64748b;
+            --gray-light: #cbd5e1;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f1515 0%, #1a1f1f 50%, #0f1515 100%);
+            color: white;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 31, 31, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 223, 252, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        /* Search Section */
+        .search-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.25rem 1.5rem 1.25rem 3.5rem;
+            font-size: 1rem;
+            background: rgba(26, 31, 31, 0.8);
+            border: 2px solid rgba(0, 223, 252, 0.2);
+            border-radius: 16px;
+            color: white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(0, 223, 252, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        /* Filters */
+        .filters-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(26, 31, 31, 0.8);
+            border: 1px solid rgba(0, 223, 252, 0.2);
+            border-radius: 12px;
+            color: var(--gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .sort-dropdown {
+            padding: 0.75rem 1.5rem;
+            background: rgba(26, 31, 31, 0.8);
+            border: 1px solid rgba(0, 223, 252, 0.2);
+            border-radius: 12px;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .sort-dropdown:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Resources Grid */
+        .resources-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Resource Card */
+        .resource-card {
+            background: rgba(26, 31, 31, 0.8);
+            border: 1px solid rgba(0, 223, 252, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            border-color: transparent;
+        }
+
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+
+        .resource-card-inner {
+            position: relative;
+            background: rgba(26, 31, 31, 0.95);
+            margin: -2rem;
+            padding: 2rem;
+            border-radius: 18px;
+        }
+
+        .resource-category {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 140, 158, 0.2);
+            color: var(--accent);
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+            line-height: 1.3;
+        }
+
+        .resource-card p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-dark);
+        }
+
+        .resource-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Blog Post Card */
+        .blog-card {
+            background: rgba(26, 31, 31, 0.8);
+            border: 1px solid rgba(0, 223, 252, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-date {
+            color: var(--gray-dark);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        /* Download Section */
+        .download-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .download-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .download-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .download-card {
+            background: rgba(26, 31, 31, 0.8);
+            border: 1px solid rgba(0, 223, 252, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .download-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .download-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 223, 252, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .download-info h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: white;
+        }
+
+        .download-info p {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .newsletter-container {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 223, 252, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .newsletter-content p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: white;
+            min-width: 250px;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .newsletter-btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 223, 252, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            color: var(--gray-dark);
+            font-size: 0.875rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem 4rem;
+            }
+
+            .filters-container {
+                padding: 0 1rem 2rem;
+            }
+
+            .newsletter-container {
+                padding: 3rem 1.5rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                width: 100%;
+            }
+        }
+
+        /* Loading State */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(26, 31, 31, 0.8) 25%, rgba(26, 31, 31, 0.6) 50%, rgba(26, 31, 31, 0.8) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Icons */
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">OBLINOR</div>
+            <ul class="nav-links">
+                <li><a href="1oblinor-hero-premium-creative.html">Home</a></li>
+                <li><a href="#documentation">Documentation</a></li>
+                <li><a href="#api">API Reference</a></li>
+                <li><a href="#tutorials">Tutorials</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <h1>Resources & Documentation</h1>
+        <p>Everything you need to build, integrate, and succeed with OBLINOR EQUITY HUB</p>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section fade-in">
+        <div class="search-container">
+            <svg class="search-icon icon" viewBox="0 0 24 24">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Search documentation, tutorials, API references..." id="searchInput">
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-container fade-in">
+        <div class="filter-group">
+            <button class="filter-btn active" data-category="all">All Resources</button>
+            <button class="filter-btn" data-category="documentation">Documentation</button>
+            <button class="filter-btn" data-category="api">API Reference</button>
+            <button class="filter-btn" data-category="tutorial">Tutorials</button>
+            <button class="filter-btn" data-category="case-study">Case Studies</button>
+            <button class="filter-btn" data-category="blog">Blog Posts</button>
+        </div>
+        <select class="sort-dropdown" id="sortDropdown">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="popular">Most Popular</option>
+            <option value="alphabetical">Alphabetical</option>
+        </select>
+    </section>
+
+    <!-- Resources Grid -->
+    <section class="resources-grid" id="resourcesGrid">
+        <!-- Documentation Cards -->
+        <article class="resource-card fade-in" data-category="documentation">
+            <div class="resource-card-inner">
+                <span class="resource-category">Documentation</span>
+                <h3>Getting Started Guide</h3>
+                <p>Learn the basics of OBLINOR EQUITY HUB. This comprehensive guide covers installation, configuration, and your first integration.</p>
+                <div class="resource-meta">
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        15 min read
+                    </span>
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Updated 2 days ago
+                    </span>
+                </div>
+            </div>
+        </article>
+
+        <article class="resource-card fade-in" data-category="api">
+            <div class="resource-card-inner">
+                <span class="resource-category">API Reference</span>
+                <h3>REST API Documentation</h3>
+                <p>Complete reference for our REST API endpoints. Includes authentication, request/response formats, and code examples.</p>
+                <div class="resource-meta">
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        API v2.0
+                    </span>
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Stable
+                    </span>
+                </div>
+            </div>
+        </article>
+
+        <article class="resource-card fade-in" data-category="tutorial">
+            <div class="resource-card-inner">
+                <span class="resource-category">Tutorial</span>
+                <h3>Building Your First Integration</h3>
+                <p>Step-by-step tutorial on creating your first integration with OBLINOR. From setup to deployment in under 30 minutes.</p>
+                <div class="resource-meta">
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        30 min tutorial
+                    </span>
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Beginner
+                    </span>
+                </div>
+            </div>
+        </article>
+
+        <article class="resource-card fade-in" data-category="case-study">
+            <div class="resource-card-inner">
+                <span class="resource-category">Case Study</span>
+                <h3>How Nordic Bank Scaled with OBLINOR</h3>
+                <p>Learn how Nordic Bank processed 10x more transactions using OBLINOR's infrastructure. Real metrics and implementation details.</p>
+                <div class="resource-meta">
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        10x growth
+                    </span>
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Enterprise
+                    </span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Blog Post Cards -->
+        <article class="blog-card fade-in" data-category="blog">
+            <div class="blog-image"></div>
+            <div class="blog-content">
+                <p class="blog-date">December 15, 2023</p>
+                <h3 class="blog-title">Introducing OBLINOR 2.0: Next-Gen Equity Infrastructure</h3>
+                <p class="blog-excerpt">We're excited to announce the release of OBLINOR 2.0, featuring improved performance, new API endpoints, and enhanced security.</p>
+                <a href="#" class="read-more">
+                    Read more
+                    <svg class="icon" style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="resource-card fade-in" data-category="documentation">
+            <div class="resource-card-inner">
+                <span class="resource-category">Documentation</span>
+                <h3>Security Best Practices</h3>
+                <p>Essential security guidelines for implementing OBLINOR in production. Covers authentication, encryption, and compliance.</p>
+                <div class="resource-meta">
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Security
+                    </span>
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Verified
+                    </span>
+                </div>
+            </div>
+        </article>
+
+        <article class="resource-card fade-in" data-category="tutorial">
+            <div class="resource-card-inner">
+                <span class="resource-category">Tutorial</span>
+                <h3>Advanced Webhook Configuration</h3>
+                <p>Master webhook implementation with retry logic, error handling, and event filtering. Includes production-ready code samples.</p>
+                <div class="resource-meta">
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        45 min tutorial
+                    </span>
+                    <span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Advanced
+                    </span>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card fade-in" data-category="blog">
+            <div class="blog-image"></div>
+            <div class="blog-content">
+                <p class="blog-date">December 10, 2023</p>
+                <h3 class="blog-title">Best Practices for High-Frequency Trading with OBLINOR</h3>
+                <p class="blog-excerpt">Learn optimization techniques and architectural patterns for building high-frequency trading systems on OBLINOR infrastructure.</p>
+                <a href="#" class="read-more">
+                    Read more
+                    <svg class="icon" style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section">
+        <div class="download-header">
+            <h2>Download Resources</h2>
+            <p>Get offline access to our documentation and tools</p>
+        </div>
+        <div class="download-grid">
+            <div class="download-card">
+                <div class="download-icon">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="download-info">
+                    <h4>Complete Documentation PDF</h4>
+                    <p>v2.0 • 245 pages • 12.3 MB</p>
+                </div>
+            </div>
+            <div class="download-card">
+                <div class="download-icon">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="download-info">
+                    <h4>API Collection for Postman</h4>
+                    <p>Latest • All endpoints • 456 KB</p>
+                </div>
+            </div>
+            <div class="download-card">
+                <div class="download-icon">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="download-info">
+                    <h4>SDK Libraries</h4>
+                    <p>Python, JavaScript, Java • 2.1 MB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get the latest updates, tutorials, and best practices delivered to your inbox weekly</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">API Status</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2023 OBLINOR EQUITY HUB. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const resourceCards = document.querySelectorAll('.resource-card, .blog-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            resourceCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                resourceCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Sort functionality
+        const sortDropdown = document.getElementById('sortDropdown');
+        const resourcesGrid = document.getElementById('resourcesGrid');
+        
+        sortDropdown.addEventListener('change', (e) => {
+            const sortValue = e.target.value;
+            const cards = Array.from(resourceCards);
+            
+            let sortedCards;
+            switch(sortValue) {
+                case 'alphabetical':
+                    sortedCards = cards.sort((a, b) => {
+                        const titleA = a.querySelector('h3').textContent;
+                        const titleB = b.querySelector('h3').textContent;
+                        return titleA.localeCompare(titleB);
+                    });
+                    break;
+                case 'newest':
+                    // In real implementation, you'd sort by actual dates
+                    sortedCards = cards.reverse();
+                    break;
+                case 'oldest':
+                    sortedCards = cards;
+                    break;
+                case 'popular':
+                    // In real implementation, you'd sort by view count or similar metric
+                    sortedCards = cards.sort(() => Math.random() - 0.5);
+                    break;
+                default:
+                    sortedCards = cards;
+            }
+            
+            // Clear grid and re-append sorted cards
+            resourcesGrid.innerHTML = '';
+            sortedCards.forEach(card => resourcesGrid.appendChild(card));
+        });
+
+        // Newsletter form
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            
+            // In real implementation, you'd send this to your backend
+            alert(`Thank you for subscribing with email: ${email}`);
+            newsletterForm.reset();
+        });
+
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.resource-card, .blog-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

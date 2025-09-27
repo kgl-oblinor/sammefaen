@@ -1,0 +1,59 @@
+{
+  "name": "Oblinor Equity Hub",
+  "short_name": "Oblinor",
+  "description": "Streamline your private equity operations with advanced portfolio management, deal tracking, and investor relations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030c1d",
+  "theme_color": "#4318ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Portfolio",
+      "description": "View your portfolio",
+      "url": "/portfolio",
+      "icons": [
+        {
+          "src": "/icon-portfolio.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Deals",
+      "description": "Track your deals",
+      "url": "/deals",
+      "icons": [
+        {
+          "src": "/icon-deals.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "categories": ["finance", "business", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}
