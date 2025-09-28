@@ -1,6 +1,6 @@
 'use server';
 
-import { ContactFormData, DemoRequestFormData, isDemoRequest } from '@/lib/validations/contact';
+import { EmailSignupData } from '@/lib/validations/contact';
 
 interface SubmitResult {
   success: boolean;
@@ -9,7 +9,7 @@ interface SubmitResult {
 }
 
 export async function submitContactForm(
-  data: ContactFormData | DemoRequestFormData
+  data: EmailSignupData
 ): Promise<SubmitResult> {
   try {
     // Here we'll integrate with your email service
@@ -23,14 +23,17 @@ export async function submitContactForm(
     };
 
     // Determine the email template based on form type
-    const emailTemplate = isDemoRequest(data) ? 'demo-request' : 'contact-form';
+    const emailTemplate = data.type === 'demo' ? 'demo-request' : 
+                         data.type === 'newsletter' ? 'newsletter-signup' : 'contact-form';
     
     // Email configuration
     const emailConfig = {
       to: process.env.CONTACT_EMAIL || 'admin@oblinor.com',
       from: data.email,
-      subject: isDemoRequest(data) 
-        ? `Demo Request from ${data.name} at ${(data as DemoRequestFormData).company}`
+      subject: data.type === 'demo' 
+        ? `Demo Request from ${data.name}`
+        : data.type === 'newsletter'
+        ? `Newsletter Signup from ${data.name}`
         : `Contact Form Submission from ${data.name}`,
       template: emailTemplate,
       data: formData,
@@ -70,7 +73,7 @@ export async function submitContactForm(
 
 // Helper function to send notification emails to admin
 export async function sendAdminNotification(
-  data: ContactFormData | DemoRequestFormData
+  data: EmailSignupData
 ): Promise<void> {
   // This function can be used to send immediate notifications to admin
   // when a new form submission is received
@@ -83,7 +86,7 @@ export async function sendAdminNotification(
 
 // Helper function to send confirmation email to user
 export async function sendUserConfirmation(
-  data: ContactFormData | DemoRequestFormData
+  data: EmailSignupData
 ): Promise<void> {
   // Send a confirmation email to the user
   
@@ -94,7 +97,7 @@ export async function sendUserConfirmation(
     template: 'user-confirmation',
     data: {
       name: data.name,
-      isDemo: isDemoRequest(data),
+      isDemo: data.type === 'demo',
     },
   };
   

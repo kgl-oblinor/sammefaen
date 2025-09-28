@@ -9,7 +9,11 @@
       "Bash(npm run dev:*)",
       "Bash(npm run build:*)",
       "Bash(npm install:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(npx next build:*)",
+      "Bash(npx prettier:*)",
+      "Bash(npm i:*)",
+      "Bash(vercel)"
     ],
     "deny": []
   }

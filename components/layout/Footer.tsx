@@ -5,28 +5,10 @@ export default function Footer() {
 
   const footerLinks = {
     Company: [
-      { href: '/about', label: 'About Us' },
-      { href: '/team', label: 'Our Team' },
-      { href: '/careers', label: 'Careers' },
-      { href: '/press', label: 'Press' },
-    ],
-    Resources: [
-      { href: '/blog', label: 'Blog' },
-      { href: '/documentation', label: 'Documentation' },
-      { href: '/support', label: 'Support' },
-      { href: '/faq', label: 'FAQ' },
-    ],
-    Legal: [
-      { href: '/privacy', label: 'Privacy Policy' },
-      { href: '/terms', label: 'Terms of Service' },
-      { href: '/cookies', label: 'Cookie Policy' },
-      { href: '/compliance', label: 'Compliance' },
-    ],
-    Connect: [
-      { href: '/contact', label: 'Contact Us' },
-      { href: '/newsletter', label: 'Newsletter' },
-      { href: '/community', label: 'Community' },
-      { href: '/partners', label: 'Partners' },
+      { href: '/', label: 'Home' },
+      { href: '/features', label: 'Features' },
+      { href: '/pricing', label: 'Pricing' },
+      { href: '/contact', label: 'Contact' },
     ],
   }
 

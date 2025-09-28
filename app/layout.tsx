@@ -4,13 +4,13 @@ import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/layout/Footer'
 import ParticleSystem from '@/components/ParticleSystem'
-import { AuthProvider } from '@/contexts/AuthContext'
 import { constructMetadata } from '@/lib/metadata'
 import { organizationSchema, websiteSchema } from '@/lib/structured-data'
 import Script from 'next/script'
 import { WebVitals } from '@/components/WebVitals'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import CookieConsent from '@/components/CookieConsent'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -67,17 +67,16 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <AuthProvider>
-          <ParticleSystem />
-          <Navigation />
-          <main className="min-h-screen bg-background text-text-primary">
-            {children}
-          </main>
-          <Footer />
-        </AuthProvider>
+        <ParticleSystem />
+        <Navigation />
+        <main className="min-h-screen bg-background text-text-primary">
+          {children}
+        </main>
+        <Footer />
         <WebVitals />
         <Analytics />
         <SpeedInsights />
+        <CookieConsent />
         <Script
           id="web-vitals"
           strategy="afterInteractive"

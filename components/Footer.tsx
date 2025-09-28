@@ -1,26 +1,11 @@
 import Link from 'next/link'
 
 const footerLinks = {
-  Product: [
+  Pages: [
+    { href: '/', label: 'Home' },
     { href: '/features', label: 'Features' },
-    { href: '/solutions', label: 'Solutions' },
     { href: '/pricing', label: 'Pricing' },
-    { href: '/demo', label: 'Request Demo' },
-  ],
-  Company: [
-    { href: '/about', label: 'About Us' },
-    { href: '/careers', label: 'Careers' },
     { href: '/contact', label: 'Contact' },
-  ],
-  Resources: [
-    { href: '/resources', label: 'Resource Center' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/help', label: 'Help Center' },
-  ],
-  Legal: [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
-    { href: '/security', label: 'Security' },
   ],
 }
 

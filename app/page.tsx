@@ -10,6 +10,7 @@ import AnimatedCard from '@/components/AnimatedCard'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import AnimatedButton from '@/components/AnimatedButton'
 import ParallaxSection from '@/components/ParallaxSection'
+import EmailSignup from '@/components/EmailSignup'
 
 // Dynamic imports for heavy components
 const FeaturesSection = dynamic(() => import('@/components/sections/FeaturesSection'), {
@@ -50,13 +51,9 @@ export default function HomePage() {
                 Empowering financial inclusion through innovative technology and community-driven solutions
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <AnimatedButton href="/get-started" variant="primary" className="btn-lg">
-                  Get Started
-                </AnimatedButton>
-                <AnimatedButton href="/learn-more" variant="secondary" className="btn-lg">
-                  Learn More
-                </AnimatedButton>
+              <div className="mt-12 max-w-md mx-auto">
+                <p className="text-sm text-text-secondary mb-4 text-center">Get early access and updates</p>
+                <EmailSignup type="newsletter" />
               </div>
             </motion.div>
 
@@ -86,6 +83,145 @@ export default function HomePage() {
               }}
             />
           </div>
+        </div>
+      </section>
+
+      {/* Blockchain Integration Section */}
+      <section className="section-padding bg-gradient-to-b from-background-dark to-background relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container relative z-10">
+          <ScrollAnimation>
+            <div className="text-center mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
+                  Aksjehandel møter <GradientText className="from-orange-500 via-yellow-500 to-orange-400">Blockchain</GradientText>
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Revolusjonerende aksjehandel gjennom integrasjon med Solana og Bitcoin blockchain.
+                  Kjøp, selg og bytt aksjer direkte med kryptovaluta.
+                </p>
+              </motion.div>
+            </div>
+          </ScrollAnimation>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Solana Column */}
+            <AnimatedCard className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 backdrop-blur-xl border border-purple-500/20 p-8">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', delay: 0.2 }}
+                className="flex items-center mb-6"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+                  <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white ml-4">Solana Blockchain</h3>
+              </motion.div>
+              <ul className="space-y-4 text-gray-200">
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  <span><strong>Lynrask handel:</strong> Transaksjoner på under 1 sekund</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  <span><strong>Lave kostnader:</strong> Minimumsgebyrer på $0.00025 per transaksjon</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  <span><strong>Smart contracts:</strong> Automatiserte aksjeswaps og dividender</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-400 mr-2">✓</span>
+                  <span><strong>DeFi integrasjon:</strong> Direkte tilgang til likviditetspooler</span>
+                </li>
+              </ul>
+            </AnimatedCard>
+
+            {/* Bitcoin Column */}
+            <AnimatedCard className="bg-gradient-to-br from-orange-900/50 to-yellow-800/30 backdrop-blur-xl border border-orange-500/20 p-8">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: 'spring', delay: 0.3 }}
+                className="flex items-center mb-6"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-yellow-600 rounded-xl flex items-center justify-center">
+                  <span className="text-3xl font-bold text-white">₿</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white ml-4">Bitcoin Network</h3>
+              </motion.div>
+              <ul className="space-y-4 text-gray-200">
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-2">✓</span>
+                  <span><strong>Maksimal sikkerhet:</strong> Verdens mest sikre blockchain</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-2">✓</span>
+                  <span><strong>Lightning Network:</strong> Instant mikrobetalinger</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-2">✓</span>
+                  <span><strong>Global aksept:</strong> Støttet av alle større børser</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-2">✓</span>
+                  <span><strong>Store handler:</strong> Perfekt for institusjonelle investorer</span>
+                </li>
+              </ul>
+            </AnimatedCard>
+          </div>
+
+          {/* How it Works */}
+          <div className="mt-16 bg-gradient-to-r from-purple-900/20 to-orange-900/20 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">Hvordan det fungerer</h3>
+            <div className="grid md:grid-cols-4 gap-6">
+              {[
+                { step: '1', title: 'Koble wallet', desc: 'Koble din Solana eller Bitcoin wallet', icon: '🔗' },
+                { step: '2', title: 'Velg aksjer', desc: 'Bla gjennom tilgjengelige aksjer', icon: '📊' },
+                { step: '3', title: 'Swap direkte', desc: 'Bytt krypto mot aksjer instant', icon: '⚡' },
+                { step: '4', title: 'Eierskap on-chain', desc: 'Ditt eierskap registrert på blockchain', icon: '🔐' },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 + 0.5 }}
+                  className="text-center"
+                >
+                  <div className="text-4xl mb-3">{item.icon}</div>
+                  <div className="bg-gradient-to-r from-purple-500 to-orange-500 text-transparent bg-clip-text text-lg font-bold mb-1">
+                    Steg {item.step}
+                  </div>
+                  <h4 className="text-white font-semibold mb-2">{item.title}</h4>
+                  <p className="text-gray-400 text-sm">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+            <AnimatedButton href="/demo" variant="primary" className="btn-lg">
+              Start Blockchain Trading →
+            </AnimatedButton>
+          </motion.div>
         </div>
       </section>
 
@@ -141,6 +277,25 @@ export default function HomePage() {
           </div>
         </div>
       </ParallaxSection>
+
+      {/* Email CTA Section */}
+      <section className="section-padding bg-gradient-to-r from-primary/10 to-accent/10">
+        <div className="container">
+          <ScrollAnimation>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+                Ready to Transform Your <GradientText>Financial Future</GradientText>?
+              </h2>
+              <p className="text-lg text-text-secondary mb-8">
+                Request a demo to see how Oblinor Equity Hub can empower your community
+              </p>
+              <div className="max-w-md mx-auto">
+                <EmailSignup type="demo" />
+              </div>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </section>
     </div>
     </PageTransition>
   )
