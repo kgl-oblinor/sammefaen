@@ -17,52 +17,32 @@
     --accent-light: #4DFFFF;
     --accent-dark: #00B4CC;
     
-    --background: #F5F5F5;
-    --background-dark: #0A0A0A;
-    --background-card: #FFFFFF;
-    --background-card-dark: #1A1A1A;
+    --background: #0A0A0A;
+    --background-dark: #000000;
+    --background-card: #1A1A1A;
+    --background-card-dark: #0F0F0F;
     
-    --text-primary: #333333;
-    --text-secondary: #666666;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B3B3B3;
     --text-primary-dark: #FFFFFF;
-    --text-secondary-dark: #B3B3B3;
+    --text-secondary-dark: #999999;
     
-    --border: #E0E0E0;
-    --border-dark: #333333;
+    --border: #333333;
+    --border-dark: #222222;
     
     --success: #4CAF50;
     --error: #F44336;
     --warning: #FF9800;
     --info: #2196F3;
-    
-    /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-    --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.15);
-    
-    /* Animations */
-    --transition-base: 150ms ease;
-    --transition-slow: 300ms ease;
-    --transition-slower: 500ms ease;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0A0A0A;
-      --background-card: #1A1A1A;
-      --text-primary: #FFFFFF;
-      --text-secondary: #B3B3B3;
-      --border: #333333;
-    }
   }
   
   * {
-    @apply border-border;
+    border-color: #333333;
   }
   
   body {
-    @apply bg-background text-text-primary;
+    background-color: #0A0A0A;
+    color: #FFFFFF;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
@@ -79,97 +59,74 @@
     max-width: 1280px;
   }
   
+  /* Section padding */
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  
   /* Buttons */
   .btn {
     @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
   }
   
-  .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary-dark focus:ring-primary;
-  }
-  
-  .btn-secondary {
-    @apply btn bg-secondary text-white hover:bg-secondary-dark focus:ring-secondary;
-  }
-  
-  .btn-outline {
-    @apply btn border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary;
-  }
-  
-  .btn-ghost {
-    @apply btn text-text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:ring-gray-500;
-  }
-  
   .btn-sm {
-    @apply text-sm px-3 py-1.5;
+    @apply px-3 py-1.5 text-sm;
   }
   
   .btn-md {
-    @apply text-base px-4 py-2;
+    @apply px-4 py-2 text-base;
   }
   
   .btn-lg {
-    @apply text-lg px-6 py-3;
+    @apply px-6 py-3 text-lg;
+  }
+  
+  .btn-xl {
+    @apply px-8 py-4 text-xl;
+  }
+  
+  /* Gradients */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+  
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary to-primary;
+  }
+  
+  .bg-gradient-dark {
+    @apply bg-gradient-to-b from-gray-900 to-black;
+  }
+  
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
   }
   
   /* Cards */
   .card {
-    @apply bg-background-card rounded-xl shadow-soft border border-border/50 overflow-hidden transition-all duration-200;
+    @apply rounded-xl p-6 transition-all duration-200;
   }
   
-  .card-hover {
-    @apply hover:shadow-medium hover:translate-y-[-2px];
+  .card-bordered {
+    @apply card border;
   }
   
-  /* Gradients */
-  .gradient-primary {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent;
+  .card-shadow {
+    @apply card shadow-lg;
   }
   
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  /* Forms */
+  .input {
+    @apply w-full rounded-lg border px-4 py-2 transition-colors duration-200 focus:outline-none focus:ring-2;
   }
   
-  /* Glass Effect */
-  .glass {
-    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  .input-primary {
+    @apply input border-gray-300 focus:border-primary focus:ring-primary;
   }
   
-  /* Glass Morphism - Vision UI Style */
-  .glass-morphism {
-    background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);
-    backdrop-filter: blur(120px);
-    -webkit-backdrop-filter: blur(120px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
-  
-  .glass-morphism-light {
-    background: linear-gradient(126.97deg, rgba(255, 255, 255, 0.6) 28.26%, rgba(255, 255, 255, 0.4) 91.2%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  
-  /* Authentication Gradients */
-  .auth-gradient {
-    background: linear-gradient(97.89deg, #4318ff 0%, #9f7aea 100%);
-  }
-  
-  .auth-gradient-hover {
-    background: linear-gradient(97.89deg, #5a2fff 0%, #b896ff 100%);
-  }
-  
-  /* Vision UI Background */
-  .vision-ui-bg {
-    background-color: #030c1d;
-    background-image: 
-      radial-gradient(ellipse at top left, rgba(67, 24, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at bottom right, rgba(159, 122, 234, 0.1) 0%, transparent 50%);
-  }
-  
-  /* Section Spacing */
-  .section-padding {
-    @apply py-16 md:py-20 lg:py-24;
+  .label {
+    @apply block text-sm font-medium mb-2;
   }
   
   /* Animations */
@@ -181,66 +138,155 @@
     animation: slideUp 0.5s ease-out;
   }
   
-  /* Loading Spinner */
-  .spinner {
-    @apply inline-block w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full animate-spin;
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
   }
 }
 
 @layer utilities {
-  /* Text Truncation */
+  /* Additional utilities */
   .text-balance {
     text-wrap: balance;
   }
   
-  /* Aspect Ratios */
-  .aspect-21-9 {
-    aspect-ratio: 21 / 9;
+  .transition-base {
+    transition-duration: 150ms;
   }
   
-  /* Safe Area Insets */
-  .safe-top {
-    padding-top: env(safe-area-inset-top);
+  .transition-slow {
+    transition-duration: 300ms;
   }
   
-  .safe-bottom {
-    padding-bottom: env(safe-area-inset-bottom);
+  .transition-slower {
+    transition-duration: 500ms;
   }
   
-  .safe-left {
-    padding-left: env(safe-area-inset-left);
+  /* Backdrop filters */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
   }
   
-  .safe-right {
-    padding-right: env(safe-area-inset-right);
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
   }
   
-  /* Custom Scrollbar */
-  .custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) transparent;
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
   }
   
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
   }
   
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
-    border-radius: 3px;
-  }
-  
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-dark);
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
   }
 }
 
-/* Utility Classes for Framer Motion */
-.will-change-transform {
-  will-change: transform;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Selection color */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
 }

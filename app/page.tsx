@@ -102,6 +102,9 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/20 to-orange-500/20 rounded-full mb-6 border border-purple-500/30">
+                  <span className="text-sm font-semibold text-white">For Institusjonelle Investorer</span>
+                </div>
                 <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
                   Aksjehandel møter <GradientText className="from-orange-500 via-yellow-500 to-orange-400">Blockchain</GradientText>
                 </h2>
@@ -113,7 +116,125 @@ export default function HomePage() {
             </div>
           </ScrollAnimation>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Visual Process Flow */}
+          <div className="mb-20 bg-gradient-to-r from-purple-900/10 to-orange-900/10 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
+            <h3 className="text-2xl font-bold text-white mb-12 text-center">Slik fungerer blockchain-integrasjonen</h3>
+            
+            {/* Desktop Flow Diagram */}
+            <div className="hidden md:block">
+              <div className="relative">
+                {/* Connection Lines */}
+                <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
+                  <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#8B5CF6" />
+                      <stop offset="100%" stopColor="#F97316" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M 150 100 Q 300 50 450 100"
+                    stroke="url(#lineGradient)"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeDasharray="5,5"
+                    className="animate-pulse"
+                  />
+                  <path
+                    d="M 450 100 Q 600 50 750 100"
+                    stroke="url(#lineGradient)"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeDasharray="5,5"
+                    className="animate-pulse"
+                  />
+                </svg>
+                
+                {/* Process Steps */}
+                <div className="grid grid-cols-3 gap-8 relative z-10">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-center"
+                  >
+                    <div className="bg-gradient-to-br from-purple-600 to-purple-800 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-4xl">💼</span>
+                    </div>
+                    <h4 className="text-white font-bold mb-2">Bedrift</h4>
+                    <p className="text-gray-400 text-sm">Selskapet ønsker å kjøpe aksjer med krypto</p>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="text-center"
+                  >
+                    <div className="bg-gradient-to-br from-orange-600 to-yellow-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-4xl">🔄</span>
+                    </div>
+                    <h4 className="text-white font-bold mb-2">Oblinor Hub</h4>
+                    <p className="text-gray-400 text-sm">Smart contract prosesserer transaksjonen</p>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="text-center"
+                  >
+                    <div className="bg-gradient-to-br from-green-600 to-emerald-600 w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-4xl">📈</span>
+                    </div>
+                    <h4 className="text-white font-bold mb-2">Aksjer</h4>
+                    <p className="text-gray-400 text-sm">Eierskap registrert på blockchain</p>
+                  </motion.div>
+                </div>
+              </div>
+              
+              {/* Technical Details */}
+              <div className="grid grid-cols-2 gap-6 mt-12">
+                <div className="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
+                  <h5 className="text-purple-400 font-bold mb-3">Solana Integration</h5>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <span className="text-purple-400 mr-2">→</span>
+                      <span>SPL Token Standard for aksjerepresentasjon</span>
+                    </div>
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <span className="text-purple-400 mr-2">→</span>
+                      <span>Serum DEX for likviditet</span>
+                    </div>
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <span className="text-purple-400 mr-2">→</span>
+                      <span>65,000 TPS kapasitet</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-orange-900/20 rounded-xl p-6 border border-orange-500/20">
+                  <h5 className="text-orange-400 font-bold mb-3">Bitcoin Integration</h5>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <span className="text-orange-400 mr-2">→</span>
+                      <span>RGB Protocol for smart contracts</span>
+                    </div>
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <span className="text-orange-400 mr-2">→</span>
+                      <span>Lightning for instant settlement</span>
+                    </div>
+                    <div className="flex items-center text-gray-300 text-sm">
+                      <span className="text-orange-400 mr-2">→</span>
+                      <span>Taproot for privacy</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-2 gap-12 mb-20">
             {/* Solana Column */}
             <AnimatedCard className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 backdrop-blur-xl border border-purple-500/20 p-8">
               <motion.div
@@ -136,15 +257,15 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-purple-400 mr-2">✓</span>
-                  <span><strong>Lave kostnader:</strong> Minimumsgebyrer på $0.00025 per transaksjon</span>
+                  <span><strong>Lave kostnader:</strong> $0.00025 per transaksjon</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-purple-400 mr-2">✓</span>
-                  <span><strong>Smart contracts:</strong> Automatiserte aksjeswaps og dividender</span>
+                  <span><strong>Smart contracts:</strong> Automatiserte aksjeswaps</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-purple-400 mr-2">✓</span>
-                  <span><strong>DeFi integrasjon:</strong> Direkte tilgang til likviditetspooler</span>
+                  <span><strong>DeFi integrasjon:</strong> Direkte tilgang til likviditet</span>
                 </li>
               </ul>
             </AnimatedCard>
@@ -173,55 +294,115 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-400 mr-2">✓</span>
-                  <span><strong>Global aksept:</strong> Støttet av alle større børser</span>
+                  <span><strong>Global aksept:</strong> Støttet av alle børser</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange-400 mr-2">✓</span>
-                  <span><strong>Store handler:</strong> Perfekt for institusjonelle investorer</span>
+                  <span><strong>Store handler:</strong> For institusjonelle investorer</span>
                 </li>
               </ul>
             </AnimatedCard>
           </div>
 
-          {/* How it Works */}
-          <div className="mt-16 bg-gradient-to-r from-purple-900/20 to-orange-900/20 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Hvordan det fungerer</h3>
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { step: '1', title: 'Koble wallet', desc: 'Koble din Solana eller Bitcoin wallet', icon: '🔗' },
-                { step: '2', title: 'Velg aksjer', desc: 'Bla gjennom tilgjengelige aksjer', icon: '📊' },
-                { step: '3', title: 'Swap direkte', desc: 'Bytt krypto mot aksjer instant', icon: '⚡' },
-                { step: '4', title: 'Eierskap on-chain', desc: 'Ditt eierskap registrert på blockchain', icon: '🔐' },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.5 }}
-                  className="text-center"
+          {/* Lead Capture Forms */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Demo Request Form */}
+            <motion.div 
+              className="bg-gradient-to-br from-purple-900/20 to-purple-800/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">Book Demo</h3>
+              <p className="text-gray-300 mb-6">Se hvordan blockchain-integrasjonen fungerer for din bedrift</p>
+              <form className="space-y-4">
+                <input 
+                  type="text" 
+                  placeholder="Selskapsnavn" 
+                  className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                />
+                <input 
+                  type="email" 
+                  placeholder="E-postadresse" 
+                  className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                />
+                <input 
+                  type="tel" 
+                  placeholder="Telefonnummer" 
+                  className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                />
+                <select className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-gray-400 focus:outline-none focus:border-purple-400 transition-colors">
+                  <option>Velg handelsvolum</option>
+                  <option>Under $1M årlig</option>
+                  <option>$1M - $10M årlig</option>
+                  <option>$10M - $100M årlig</option>
+                  <option>Over $100M årlig</option>
+                </select>
+                <motion.button 
+                  type="submit"
+                  className="w-full py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-bold rounded-lg hover:from-purple-700 hover:to-purple-900 transition-all duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <div className="text-4xl mb-3">{item.icon}</div>
-                  <div className="bg-gradient-to-r from-purple-500 to-orange-500 text-transparent bg-clip-text text-lg font-bold mb-1">
-                    Steg {item.step}
-                  </div>
-                  <h4 className="text-white font-semibold mb-2">{item.title}</h4>
-                  <p className="text-gray-400 text-sm">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+                  Book Presentasjon →
+                </motion.button>
+              </form>
+            </motion.div>
+
+            {/* Pricing Request Form */}
+            <motion.div 
+              className="bg-gradient-to-br from-orange-900/20 to-orange-800/10 backdrop-blur-xl rounded-2xl p-8 border border-orange-500/20"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">Få Pristilbud</h3>
+              <p className="text-gray-300 mb-6">Skreddersydd prising for institusjonelle kunder</p>
+              <form className="space-y-4">
+                <input 
+                  type="text" 
+                  placeholder="Kontaktperson" 
+                  className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+                />
+                <input 
+                  type="email" 
+                  placeholder="E-postadresse" 
+                  className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+                />
+                <select className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-gray-400 focus:outline-none focus:border-orange-400 transition-colors">
+                  <option>Type tjeneste</option>
+                  <option>Kun Bitcoin-handel</option>
+                  <option>Kun Solana-handel</option>
+                  <option>Full blockchain-pakke</option>
+                  <option>Enterprise løsning</option>
+                </select>
+                <textarea 
+                  placeholder="Beskriv deres behov..." 
+                  rows={3}
+                  className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors resize-none"
+                />
+                <motion.button 
+                  type="submit"
+                  className="w-full py-3 bg-gradient-to-r from-orange-600 to-yellow-600 text-white font-bold rounded-lg hover:from-orange-700 hover:to-yellow-700 transition-all duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Få Pristilbud →
+                </motion.button>
+              </form>
+            </motion.div>
           </div>
 
-          {/* CTA */}
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            <AnimatedButton href="/demo" variant="primary" className="btn-lg">
-              Start Blockchain Trading →
-            </AnimatedButton>
-          </motion.div>
+          {/* Trust Indicators */}
+          <div className="mt-16 text-center">
+            <p className="text-gray-400 mb-8">Trusted by leading institutions</p>
+            <div className="flex justify-center items-center gap-12 opacity-50">
+              <div className="text-gray-500 font-bold text-xl">NASDAQ</div>
+              <div className="text-gray-500 font-bold text-xl">NYSE</div>
+              <div className="text-gray-500 font-bold text-xl">LSE</div>
+              <div className="text-gray-500 font-bold text-xl">TSE</div>
+            </div>
+          </div>
         </div>
       </section>
 
