@@ -81,9 +81,9 @@ const config: Config = {
       
       // Typography
       fontFamily: {
-        sans: designTokens.typography.fontFamily.sans,
-        display: designTokens.typography.fontFamily.display,
-        mono: designTokens.typography.fontFamily.mono,
+        sans: [...designTokens.typography.fontFamily.sans],
+        display: [...designTokens.typography.fontFamily.display],
+        mono: [...designTokens.typography.fontFamily.mono],
       },
       fontSize: designTokens.typography.fontSize,
       fontWeight: designTokens.typography.fontWeight,
@@ -109,10 +109,17 @@ const config: Config = {
       
       // Box Shadow
       boxShadow: {
-        ...designTokens.shadows,
         'glow-cyan': designTokens.shadows.glow.cyan,
         'glow-cyan-strong': designTokens.shadows.glow.cyanStrong,
         'glow-primary': designTokens.shadows.glow.primary,
+        'none': designTokens.shadows.none,
+        'sm': designTokens.shadows.sm,
+        'DEFAULT': designTokens.shadows.DEFAULT,
+        'md': designTokens.shadows.md,
+        'lg': designTokens.shadows.lg,
+        'xl': designTokens.shadows.xl,
+        '2xl': designTokens.shadows['2xl'],
+        'floating': designTokens.shadows.floating,
       },
       
       // Z-index

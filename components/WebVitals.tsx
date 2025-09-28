@@ -11,8 +11,8 @@ export function WebVitals() {
     }
 
     // Send to analytics service
-    if (window.gtag) {
-      window.gtag('event', metric.name, {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', metric.name, {
         value: Math.round(
           metric.name === 'CLS' ? metric.value * 1000 : metric.value
         ),
@@ -22,8 +22,8 @@ export function WebVitals() {
     }
 
     // Send to Vercel Analytics if available
-    if (window.va) {
-      window.va('track', metric.name, {
+    if (typeof window !== 'undefined' && (window as any).va) {
+      (window as any).va('track', metric.name, {
         value: metric.value,
         delta: metric.delta,
       })
