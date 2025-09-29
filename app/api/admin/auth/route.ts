@@ -3,8 +3,12 @@ import { cookies } from 'next/headers'
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD
 
-if (!ADMIN_PASSWORD) {
-  throw new Error('ADMIN_PASSWORD environment variable is not set')
+// Only check at runtime when the API is called, not at module load
+const getAdminPassword = () => {
+  if (!ADMIN_PASSWORD) {
+    throw new Error('ADMIN_PASSWORD environment variable is not set')
+  }
+  return ADMIN_PASSWORD
 }
 
 export async function GET(request: NextRequest) {
@@ -21,7 +25,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   const { password } = await request.json()
   
-  if (password === ADMIN_PASSWORD) {
+  if (password === getAdminPassword()) {
     const response = NextResponse.json({ success: true })
     response.cookies.set('admin-auth', 'authenticated', {
       httpOnly: true,
