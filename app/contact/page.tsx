@@ -1,9 +1,9 @@
 'use client'
 
-import PageTransition from '@/components/PageTransition'
-import GradientText from '@/components/GradientText'
-import ScrollAnimation from '@/components/ScrollAnimation'
-import EmailSignup from '@/components/EmailSignup'
+import PageTransition from '@/components/animations/PageTransition'
+import GradientText from '@/components/common/GradientText'
+import ScrollAnimation from '@/components/animations/ScrollAnimation'
+import EmailSignup from '@/components/forms/EmailSignup'
 import { motion } from 'framer-motion'
 
 export default function ContactPage() {

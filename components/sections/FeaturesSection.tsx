@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import AnimatedCard from '@/components/AnimatedCard'
-import ScrollAnimation from '@/components/ScrollAnimation'
-import GradientText from '@/components/GradientText'
+import AnimatedCard from '@/components/animations/AnimatedCard'
+import ScrollAnimation from '@/components/animations/ScrollAnimation'
+import GradientText from '@/components/common/GradientText'
 
 const features = [
   {

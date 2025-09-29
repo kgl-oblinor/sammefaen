@@ -13,7 +13,18 @@
       "Bash(npx next build:*)",
       "Bash(npx prettier:*)",
       "Bash(npm i:*)",
-      "Bash(vercel)"
+      "Bash(vercel)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(pkill:*)",
+      "Bash(true)",
+      "Bash(curl:*)",
+      "Bash(mv:*)",
+      "Bash(tree:*)",
+      "Bash(mv:*)",
+      "Bash(touch:*)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

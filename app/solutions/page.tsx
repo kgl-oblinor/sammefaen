@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import PageTransition from '@/components/PageTransition'
-import GradientText from '@/components/GradientText'
-import AnimatedCard from '@/components/AnimatedCard'
-import ScrollAnimation from '@/components/ScrollAnimation'
+import PageTransition from '@/components/animations/PageTransition'
+import GradientText from '@/components/common/GradientText'
+import AnimatedCard from '@/components/animations/AnimatedCard'
+import ScrollAnimation from '@/components/animations/ScrollAnimation'
 
 export default function SolutionsPage() {
   const solutions = [
@@ -303,11 +303,6 @@ export default function SolutionsPage() {
             </motion.div>
           </div>
         </section>
-      </div>
-    </PageTransition>
-  )
-}
-
         {/* Infrastructure & Compliance Section */}
         <section className="section-padding bg-gradient-to-b from-background-dark to-background">
           <div className="container">
@@ -350,6 +345,9 @@ export default function SolutionsPage() {
             </div>
           </div>
         </section>
+
+        {/* CTA Section */}
+        <section className="section-padding">
           <div className="container text-center">
             <h2 className="text-3xl font-bold mb-4">
               Ikke sikker på hvilken løsning som passer best?

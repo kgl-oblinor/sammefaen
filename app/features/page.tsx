@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion'
 import type { Metadata } from 'next'
-import PageTransition from '@/components/PageTransition'
-import ScrollAnimation from '@/components/ScrollAnimation'
-import AnimatedCard from '@/components/AnimatedCard'
-import GradientText from '@/components/GradientText'
-import AnimatedButton from '@/components/AnimatedButton'
+import PageTransition from '@/components/animations/PageTransition'
+import ScrollAnimation from '@/components/animations/ScrollAnimation'
+import AnimatedCard from '@/components/animations/AnimatedCard'
+import GradientText from '@/components/common/GradientText'
+import AnimatedButton from '@/components/animations/AnimatedButton'
 import { staggerContainer, staggerItem } from '@/lib/animations'
 
 const features = [

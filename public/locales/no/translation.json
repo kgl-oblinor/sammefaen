@@ -1,0 +1,217 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "about": "Om oss",
+    "services": "Tjenester",
+    "features": "Funksjoner",
+    "solutions": "Løsninger",
+    "pricing": "Priser",
+    "community": "Fellesskap",
+    "contact": "Kontakt",
+    "getStarted": "Kom i gang",
+    "privacy": "Personvern",
+    "terms": "Vilkår"
+  },
+  "hero": {
+    "title": "Velkommen til",
+    "brandName": "Oblinor Equity Hub",
+    "subtitle": "Styrker finansiell inkludering gjennom innovativ teknologi og fellesskapsdrevne løsninger",
+    "emailPlaceholder": "Din e-postadresse",
+    "emailCta": "Få tidlig tilgang og oppdateringer",
+    "getStarted": "Kom i gang"
+  },
+  "blockchain": {
+    "badge": "Drevet av Euronext Issuer Services",
+    "title": "Én Plattform -",
+    "titleHighlight": "Flere Muligheter",
+    "subtitle": "Handle aksjer med NOK, Bitcoin, Solana eller tradisjonell valuta. Alt på samme plattform - du velger hvordan du betaler.",
+    "paymentMethodsTitle": "Velg din foretrukne betalingsmetode",
+    "howItWorks": "Slik fungerer plattformen",
+    "norwegianKroner": {
+      "title": "Norske Kroner",
+      "description": "Tradisjonell bankoverføring"
+    },
+    "solana": {
+      "title": "Solana",
+      "description": "Instant settlement",
+      "features": {
+        "speed": "Lynrask handel: Transaksjoner på under 1 sekund",
+        "cost": "Lave kostnader: $0.00025 per transaksjon",
+        "smart": "Smart contracts: Automatiserte aksjeswaps",
+        "defi": "DeFi integrasjon: Direkte tilgang til likviditet"
+      }
+    },
+    "bitcoin": {
+      "title": "Bitcoin",
+      "description": "Lightning Network",
+      "features": {
+        "security": "Maksimal sikkerhet: Verdens mest sikre blockchain",
+        "lightning": "Lightning Network: Instant mikrobetalinger",
+        "global": "Global aksept: Støttet av alle børser",
+        "institutional": "Store handler: For institusjonelle investorer"
+      }
+    },
+    "card": {
+      "title": "Kort/SEPA",
+      "description": "Visa/Mastercard"
+    },
+    "processSteps": {
+      "company": {
+        "title": "Bedrift",
+        "description": "Selskapet ønsker å kjøpe aksjer med krypto"
+      },
+      "hub": {
+        "title": "Oblinor Hub",
+        "description": "Smart contract prosesserer transaksjonen"
+      },
+      "shares": {
+        "title": "Aksjer",
+        "description": "Eierskap registrert på blockchain"
+      }
+    },
+    "technicalDetails": {
+      "blockchain": {
+        "title": "Blockchain-basert",
+        "solanaTokens": "Solana: SPL Tokens & instant settlement",
+        "bitcoinLightning": "Bitcoin: Lightning Network for speed",
+        "onChain": "On-chain eierskap og transparens"
+      },
+      "traditional": {
+        "title": "Tradisjonell betaling",
+        "nok": "NOK via norske banker",
+        "sepa": "SEPA overføringer (EUR)",
+        "cards": "Visa/Mastercard støtte"
+      }
+    }
+  },
+  "forms": {
+    "demo": {
+      "title": "Book Demo",
+      "subtitle": "Se hvordan blockchain-integrasjonen fungerer for din bedrift",
+      "companyName": "Selskapsnavn",
+      "email": "E-postadresse",
+      "phone": "Telefonnummer",
+      "volume": "Velg handelsvolum",
+      "volumeOptions": {
+        "select": "Velg handelsvolum",
+        "under1m": "Under $1M årlig",
+        "1to10m": "$1M - $10M årlig",
+        "10to100m": "$10M - $100M årlig",
+        "over100m": "Over $100M årlig"
+      },
+      "submit": "Book Presentasjon →"
+    },
+    "pricing": {
+      "title": "Få Pristilbud",
+      "subtitle": "Skreddersydd prising for institusjonelle kunder",
+      "contactPerson": "Kontaktperson",
+      "email": "E-postadresse",
+      "serviceType": "Type tjeneste",
+      "serviceOptions": {
+        "select": "Type tjeneste",
+        "bitcoinOnly": "Kun Bitcoin-handel",
+        "solanaOnly": "Kun Solana-handel",
+        "fullBlockchain": "Full blockchain-pakke",
+        "enterprise": "Enterprise løsning"
+      },
+      "needs": "Beskriv deres behov...",
+      "submit": "Få Pristilbud →"
+    },
+    "contact": {
+      "name": "Navn",
+      "email": "E-post",
+      "company": "Selskap",
+      "phone": "Telefon",
+      "subject": "Emne",
+      "message": "Melding",
+      "consent": "Jeg godtar personvernerklæringen og brukervilkårene",
+      "submit": "Send melding",
+      "sending": "Sender...",
+      "success": "Takk for din melding! Vi tar kontakt snart.",
+      "placeholders": {
+        "name": "Ola Nordmann",
+        "email": "ola@eksempel.no",
+        "company": "Firma AS",
+        "phone": "+47 123 45 678",
+        "subject": "Hvordan kan vi hjelpe deg?",
+        "message": "Fortell oss mer om dine behov..."
+      }
+    }
+  },
+  "infrastructure": {
+    "title": "Regulert Infrastruktur",
+    "subtitle": "Oblinor bruker etablert infrastruktur fra Euronext VPS og DNB Verdipapirservice som kontofører.",
+    "warning": "NB: Kontoførertjenester må søkes om direkte hos DNB.",
+    "importantNote": "Viktig: Oblinor tilbyr ikke kontoførertjenester direkte. Kunder må selv søke om VPS-konto hos DNB Verdipapirservice.",
+    "standard": {
+      "title": "Standard prosess",
+      "description": "Manuell søknad hos DNB for VPS-konto"
+    },
+    "premium": {
+      "title": "Premium tilgang",
+      "description": "Automatisert søknadsprosess (kommer)"
+    },
+    "euronext": {
+      "title": "Euronext VPS",
+      "description": "Vi bruker VPS-infrastruktur for handler"
+    },
+    "dnb": {
+      "title": "DNB Verdipapirservice",
+      "description": "Offisiell kontofører (søk selv)"
+    },
+    "premiumBanner": {
+      "title": "Premium medlemskap (kommer snart)",
+      "description": "Automatisert VPS-kontosøknad direkte i plattformen. Slipper manuell prosess hos DNB."
+    },
+    "trustedBy": "Betrodd av ledende institusjoner"
+  },
+  "features": {
+    "title": "Bygger en mer",
+    "titleHighlight": "rettferdig fremtid",
+    "subtitle": "Oppdag hvordan Oblinor Equity Hub revolusjonerer finansiell tilgang for underserverte samfunn",
+    "accessible": {
+      "title": "Tilgjengelige verktøy",
+      "description": "Brukervennlige finansielle verktøy designet for alle"
+    },
+    "community": {
+      "title": "Fellesskapsdrevet",
+      "description": "Bygget av fellesskapet, for fellesskapet"
+    },
+    "secure": {
+      "title": "Sikker og transparent",
+      "description": "Dine data og investeringer er alltid beskyttet"
+    }
+  },
+  "cta": {
+    "title": "Klar for å transformere din",
+    "titleHighlight": "finansielle fremtid",
+    "subtitle": "Be om en demo for å se hvordan Oblinor Equity Hub kan styrke ditt samfunn",
+    "emailPlaceholder": "Din e-postadresse",
+    "getDemo": "Be om demo"
+  },
+  "footer": {
+    "rights": "Alle rettigheter forbeholdt.",
+    "quickLinks": "Hurtiglenker",
+    "legal": "Juridisk",
+    "followUs": "Følg oss"
+  },
+  "errors": {
+    "pageNotFound": "Side ikke funnet",
+    "somethingWrong": "Noe gikk galt",
+    "goHome": "Gå til forsiden"
+  },
+  "loading": "Laster...",
+  "common": {
+    "learnMore": "Lær mer",
+    "viewAll": "Se alle",
+    "close": "Lukk",
+    "save": "Lagre",
+    "cancel": "Avbryt",
+    "delete": "Slett",
+    "edit": "Rediger",
+    "search": "Søk",
+    "filter": "Filtrer",
+    "sort": "Sorter",
+    "required": "Påkrevd"
+  }
+}

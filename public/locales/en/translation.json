@@ -1,0 +1,217 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "features": "Features",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "community": "Community",
+    "contact": "Contact",
+    "getStarted": "Get Started",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "hero": {
+    "title": "Welcome to",
+    "brandName": "Oblinor Equity Hub",
+    "subtitle": "Empowering financial inclusion through innovative technology and community-driven solutions",
+    "emailPlaceholder": "Your email address",
+    "emailCta": "Get early access and updates",
+    "getStarted": "Get Started"
+  },
+  "blockchain": {
+    "badge": "Powered by Euronext Issuer Services",
+    "title": "One Platform -",
+    "titleHighlight": "Multiple Opportunities",
+    "subtitle": "Trade stocks with NOK, Bitcoin, Solana or traditional currency. All on the same platform - you choose how to pay.",
+    "paymentMethodsTitle": "Choose your preferred payment method",
+    "howItWorks": "How the platform works",
+    "norwegianKroner": {
+      "title": "Norwegian Kroner",
+      "description": "Traditional bank transfer"
+    },
+    "solana": {
+      "title": "Solana",
+      "description": "Instant settlement",
+      "features": {
+        "speed": "Lightning fast trading: Transactions in under 1 second",
+        "cost": "Low costs: $0.00025 per transaction",
+        "smart": "Smart contracts: Automated stock swaps",
+        "defi": "DeFi integration: Direct access to liquidity"
+      }
+    },
+    "bitcoin": {
+      "title": "Bitcoin",
+      "description": "Lightning Network",
+      "features": {
+        "security": "Maximum security: World's most secure blockchain",
+        "lightning": "Lightning Network: Instant micropayments",
+        "global": "Global acceptance: Supported by all exchanges",
+        "institutional": "Large trades: For institutional investors"
+      }
+    },
+    "card": {
+      "title": "Card/SEPA",
+      "description": "Visa/Mastercard"
+    },
+    "processSteps": {
+      "company": {
+        "title": "Company",
+        "description": "Company wants to buy stocks with crypto"
+      },
+      "hub": {
+        "title": "Oblinor Hub",
+        "description": "Smart contract processes the transaction"
+      },
+      "shares": {
+        "title": "Shares",
+        "description": "Ownership registered on blockchain"
+      }
+    },
+    "technicalDetails": {
+      "blockchain": {
+        "title": "Blockchain-based",
+        "solanaTokens": "Solana: SPL Tokens & instant settlement",
+        "bitcoinLightning": "Bitcoin: Lightning Network for speed",
+        "onChain": "On-chain ownership and transparency"
+      },
+      "traditional": {
+        "title": "Traditional payment",
+        "nok": "NOK via Norwegian banks",
+        "sepa": "SEPA transfers (EUR)",
+        "cards": "Visa/Mastercard support"
+      }
+    }
+  },
+  "forms": {
+    "demo": {
+      "title": "Book Demo",
+      "subtitle": "See how blockchain integration works for your business",
+      "companyName": "Company name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "volume": "Select trading volume",
+      "volumeOptions": {
+        "select": "Select trading volume",
+        "under1m": "Under $1M annually",
+        "1to10m": "$1M - $10M annually",
+        "10to100m": "$10M - $100M annually",
+        "over100m": "Over $100M annually"
+      },
+      "submit": "Book Presentation →"
+    },
+    "pricing": {
+      "title": "Get Quote",
+      "subtitle": "Custom pricing for institutional clients",
+      "contactPerson": "Contact person",
+      "email": "Email address",
+      "serviceType": "Service type",
+      "serviceOptions": {
+        "select": "Service type",
+        "bitcoinOnly": "Bitcoin trading only",
+        "solanaOnly": "Solana trading only",
+        "fullBlockchain": "Full blockchain package",
+        "enterprise": "Enterprise solution"
+      },
+      "needs": "Describe your needs...",
+      "submit": "Get Quote →"
+    },
+    "contact": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "consent": "I agree to the privacy policy and terms of service",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you for your message! We'll get back to you soon.",
+      "placeholders": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "company": "Acme Corp",
+        "phone": "+1 (555) 000-0000",
+        "subject": "How can we help you?",
+        "message": "Tell us more about your needs..."
+      }
+    }
+  },
+  "infrastructure": {
+    "title": "Regulated Infrastructure",
+    "subtitle": "Oblinor uses established infrastructure from Euronext VPS and DNB Securities Service as account operator.",
+    "warning": "Note: Account operator services must be applied for directly with DNB.",
+    "importantNote": "Important: Oblinor does not offer account operator services directly. Customers must apply for a VPS account with DNB Securities Service themselves.",
+    "standard": {
+      "title": "Standard process",
+      "description": "Manual application with DNB for VPS account"
+    },
+    "premium": {
+      "title": "Premium access",
+      "description": "Automated application process (coming)"
+    },
+    "euronext": {
+      "title": "Euronext VPS",
+      "description": "We use VPS infrastructure for trades"
+    },
+    "dnb": {
+      "title": "DNB Securities Service",
+      "description": "Official account operator (apply yourself)"
+    },
+    "premiumBanner": {
+      "title": "Premium membership (coming soon)",
+      "description": "Automated VPS account application directly in the platform. Skip the manual process with DNB."
+    },
+    "trustedBy": "Trusted by leading institutions"
+  },
+  "features": {
+    "title": "Building a More",
+    "titleHighlight": "Equitable Future",
+    "subtitle": "Discover how Oblinor Equity Hub is revolutionizing financial access for underserved communities",
+    "accessible": {
+      "title": "Accessible Tools",
+      "description": "User-friendly financial tools designed for everyone"
+    },
+    "community": {
+      "title": "Community Driven",
+      "description": "Built by the community, for the community"
+    },
+    "secure": {
+      "title": "Secure & Transparent",
+      "description": "Your data and investments are always protected"
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your",
+    "titleHighlight": "Financial Future",
+    "subtitle": "Request a demo to see how Oblinor Equity Hub can empower your community",
+    "emailPlaceholder": "Your email address",
+    "getDemo": "Request Demo"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "followUs": "Follow Us"
+  },
+  "errors": {
+    "pageNotFound": "Page not found",
+    "somethingWrong": "Something went wrong",
+    "goHome": "Go to homepage"
+  },
+  "loading": "Loading...",
+  "common": {
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "required": "Required"
+  }
+}

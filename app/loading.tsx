@@ -1,6 +1,6 @@
 'use client'
 
-import LoadingSpinner from '@/components/LoadingSpinner'
+import LoadingSpinner from '@/components/common/LoadingSpinner'
 import { motion } from 'framer-motion'
 
 export default function Loading() {

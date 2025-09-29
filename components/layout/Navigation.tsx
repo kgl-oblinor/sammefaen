@@ -5,21 +5,24 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
-import ThemeToggle from '@/components/ThemeToggle'
-
-const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/features', label: 'Features' },
-  { href: '/solutions', label: 'Solutions' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/contact', label: 'Contact' },
-]
+import ThemeToggle from '@/components/layout/ThemeToggle'
+import { useTranslation } from 'react-i18next'
+import LanguageSelector from '@/components/layout/LanguageSelector'
 
 export default function Navigation() {
   const pathname = usePathname()
+  const { t } = useTranslation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  
+  const navItems = [
+    { href: '/', label: t('nav.home') },
+    { href: '/features', label: t('nav.features') },
+    { href: '/solutions', label: t('nav.solutions') },
+    { href: '/pricing', label: t('nav.pricing') },
+    { href: '/contact', label: t('nav.contact') },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,13 +112,14 @@ export default function Navigation() {
             </div>
             <motion.div className="flex items-center gap-3">
               <ThemeToggle />
+              <LanguageSelector />
               <Link
                 href="/contact"
                 className="relative group"
               >
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
                 <button className="relative px-5 py-2 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
-                  Get Started
+                  {t('nav.getStarted')}
                 </button>
               </Link>
             </motion.div>
@@ -196,11 +200,15 @@ export default function Navigation() {
                   </motion.div>
                 ))}
                 <motion.div 
-                  className="pt-4 mt-4 border-t border-gray-200/50"
+                  className="pt-4 mt-4 border-t border-gray-200/50 space-y-3"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: navItems.length * 0.05 + 0.1 }}
                 >
+                  <div className="flex items-center justify-between px-4">
+                    <ThemeToggle />
+                    <LanguageSelector />
+                  </div>
                   <Link
                     href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -208,7 +216,7 @@ export default function Navigation() {
                   >
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur-sm opacity-30 group-active:opacity-100 transition duration-200"></div>
                     <button className="relative w-full px-4 py-3 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg transform active:scale-[0.98] transition-all duration-200">
-                      Get Started
+                      {t('nav.getStarted')}
                     </button>
                   </Link>
                 </motion.div>

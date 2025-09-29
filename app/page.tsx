@@ -4,13 +4,14 @@ import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import LazyLoad from '@/components/ui/LazyLoad'
-import PageTransition from '@/components/PageTransition'
-import GradientText from '@/components/GradientText'
-import AnimatedCard from '@/components/AnimatedCard'
-import ScrollAnimation from '@/components/ScrollAnimation'
-import AnimatedButton from '@/components/AnimatedButton'
-import ParallaxSection from '@/components/ParallaxSection'
-import EmailSignup from '@/components/EmailSignup'
+import PageTransition from '@/components/animations/PageTransition'
+import GradientText from '@/components/common/GradientText'
+import AnimatedCard from '@/components/animations/AnimatedCard'
+import ScrollAnimation from '@/components/animations/ScrollAnimation'
+import AnimatedButton from '@/components/animations/AnimatedButton'
+import ParallaxSection from '@/components/animations/ParallaxSection'
+import EmailSignup from '@/components/forms/EmailSignup'
+import { useTranslation } from 'react-i18next'
 
 // Dynamic imports for heavy components
 const FeaturesSection = dynamic(() => import('@/components/sections/FeaturesSection'), {
@@ -19,6 +20,8 @@ const FeaturesSection = dynamic(() => import('@/components/sections/FeaturesSect
 })
 
 export default function HomePage() {
+  const { t } = useTranslation()
+  
   return (
     <PageTransition>
       <div className="min-h-screen">
@@ -41,18 +44,18 @@ export default function HomePage() {
               className="space-y-6"
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
-                Welcome to{' '}
+                {t('hero.title')}{' '}
                 <GradientText className="from-blue-500 via-purple-500 to-pink-500">
-                  Oblinor Equity Hub
+                  {t('hero.brandName')}
                 </GradientText>
               </h1>
               
               <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto">
-                Empowering financial inclusion through innovative technology and community-driven solutions
+                {t('hero.subtitle')}
               </p>
               
               <div className="mt-12 max-w-md mx-auto">
-                <p className="text-sm text-text-secondary mb-4 text-center">Get early access and updates</p>
+                <p className="text-sm text-text-secondary mb-4 text-center">{t('hero.emailCta')}</p>
                 <EmailSignup type="newsletter" />
               </div>
             </motion.div>
@@ -103,14 +106,13 @@ export default function HomePage() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/20 to-orange-500/20 rounded-full mb-6 border border-purple-500/30">
-                  <span className="text-sm font-semibold text-white">Powered by Euronext Issuer Services</span>
+                  <span className="text-sm font-semibold text-white">{t('blockchain.badge')}</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
-                  Én Plattform - <GradientText className="from-orange-500 via-yellow-500 to-orange-400">Flere Muligheter</GradientText>
+                  {t('blockchain.title')} <GradientText className="from-orange-500 via-yellow-500 to-orange-400">{t('blockchain.titleHighlight')}</GradientText>
                 </h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Handle aksjer med NOK, Bitcoin, Solana eller tradisjonell valuta.
-                  Alt på samme plattform - du velger hvordan du betaler.
+                  {t('blockchain.subtitle')}
                 </p>
               </motion.div>
             </div>
@@ -118,7 +120,7 @@ export default function HomePage() {
 
           {/* Visual Process Flow */}
           <div className="mb-20 bg-gradient-to-r from-purple-900/10 to-orange-900/10 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-12 text-center">Velg din foretrukne betalingsmetode</h3>
+            <h3 className="text-2xl font-bold text-white mb-12 text-center">{t('blockchain.paymentMethodsTitle')}</h3>
             
             {/* Payment Methods Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
@@ -499,13 +501,13 @@ export default function HomePage() {
                   <div className="space-y-3">
                     <div className="bg-white rounded-xl p-4">
                       <svg className="w-28 h-10 mx-auto" viewBox="0 0 200 50" fill="none">
-                        <text x="10" y="35" fill="#004B87" font-family="Arial, sans-serif" font-size="24" font-weight="bold">EURONEXT</text>
+                        <text x="10" y="35" fill="#004B87" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold">EURONEXT</text>
                       </svg>
                       <p className="text-xs text-gray-600">VPS Infrastructure</p>
                     </div>
                     <div className="bg-white rounded-xl p-4">
                       <svg className="w-28 h-10 mx-auto" viewBox="0 0 200 50" fill="none">
-                        <text x="35" y="35" fill="#007272" font-family="Arial, sans-serif" font-size="28" font-weight="bold">DNB</text>
+                        <text x="35" y="35" fill="#007272" fontFamily="Arial, sans-serif" fontSize="28" fontWeight="bold">DNB</text>
                       </svg>
                       <p className="text-xs text-gray-600">Verdipapirservice</p>
                     </div>

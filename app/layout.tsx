@@ -3,9 +3,9 @@ import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import '../styles/cyberpunk.css'
 import '../styles/apple-watch.css'
-import Navigation from '@/components/Navigation'
+import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
-import ParticleSystem from '@/components/ParticleSystem'
+import ParticleSystem from '@/components/animations/ParticleSystem'
 import { constructMetadata } from '@/lib/metadata'
 import { organizationSchema, websiteSchema } from '@/lib/structured-data'
 import Script from 'next/script'
@@ -13,6 +13,7 @@ import { WebVitals } from '@/components/WebVitals'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import I18nProvider from '@/providers/I18nProvider'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -70,15 +71,17 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider>
-          <ParticleSystem />
-          <Navigation />
-          <main className="min-h-screen bg-background text-text-primary">
-            {children}
-          </main>
-          <Footer />
-          <WebVitals />
-          <Analytics />
-          <SpeedInsights />
+          <I18nProvider>
+            <ParticleSystem />
+            <Navigation />
+            <main className="min-h-screen bg-background text-text-primary">
+              {children}
+            </main>
+            <Footer />
+            <WebVitals />
+            <Analytics />
+            <SpeedInsights />
+          </I18nProvider>
         </ThemeProvider>
         <Script
           id="web-vitals"
