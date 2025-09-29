@@ -24,7 +24,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     checkAuth()
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const checkAuth = async () => {
     try {

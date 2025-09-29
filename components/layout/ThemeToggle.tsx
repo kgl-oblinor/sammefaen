@@ -6,12 +6,13 @@ import { useState, useEffect } from 'react'
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
+  const { theme, toggleTheme } = useTheme()
   
   useEffect(() => {
     setMounted(true)
   }, [])
   
-  // Don't use hooks until mounted to avoid SSR issues
+  // Don't render content until mounted to avoid SSR issues
   if (!mounted) {
     return (
       <motion.button
@@ -25,8 +26,6 @@ export default function ThemeToggle() {
       </motion.button>
     )
   }
-  
-  const { theme, toggleTheme } = useTheme()
 
   const getIcon = () => {
     switch (theme) {
