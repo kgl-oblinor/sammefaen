@@ -11,17 +11,23 @@ import LanguageSelector from '@/components/layout/LanguageSelector'
 
 export default function Navigation() {
   const pathname = usePathname()
-  const { t } = useTranslation()
+  const { t, ready } = useTranslation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   
   const navItems = [
-    { href: '/', label: t('nav.home') },
-    { href: '/features', label: t('nav.features') },
-    { href: '/solutions', label: t('nav.solutions') },
-    { href: '/pricing', label: t('nav.pricing') },
-    { href: '/contact', label: t('nav.contact') },
+    { href: '/', label: mounted && ready ? t('nav.home') : 'Home' },
+    { href: '/features', label: mounted && ready ? t('nav.features') : 'Features' },
+    { href: '/solutions', label: mounted && ready ? t('nav.solutions') : 'Solutions' },
+    { href: '/institusjonelle', label: mounted && ready ? t('nav.institusjonelle') : 'Institusjonelle' },
+    { href: '/pricing', label: mounted && ready ? t('nav.pricing') : 'Pricing' },
+    { href: '/contact', label: mounted && ready ? t('nav.contact') : 'Contact' },
   ]
 
   useEffect(() => {
@@ -119,7 +125,7 @@ export default function Navigation() {
               >
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
                 <button className="relative px-5 py-2 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
-                  {t('nav.getStarted')}
+                  {mounted && ready ? t('nav.getStarted') : 'Get Started'}
                 </button>
               </Link>
             </motion.div>
@@ -216,7 +222,7 @@ export default function Navigation() {
                   >
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur-sm opacity-30 group-active:opacity-100 transition duration-200"></div>
                     <button className="relative w-full px-4 py-3 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg transform active:scale-[0.98] transition-all duration-200">
-                      {t('nav.getStarted')}
+                      {mounted && ready ? t('nav.getStarted') : 'Get Started'}
                     </button>
                   </Link>
                 </motion.div>
