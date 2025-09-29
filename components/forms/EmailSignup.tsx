@@ -80,7 +80,7 @@ export default function EmailSignup({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder={placeholder || defaultPlaceholder}
-          className="w-full px-4 py-3 pr-32 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+          className="w-full px-4 py-3 pr-32 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-white text-black"
           disabled={status === 'loading' || status === 'success'}
           aria-invalid={status === 'error'}
           aria-describedby={status === 'error' ? `error-${type}` : undefined}
@@ -88,7 +88,7 @@ export default function EmailSignup({
         <button
           type="submit"
           disabled={status === 'loading' || status === 'success'}
-          className="absolute right-1 top-1 bottom-1 px-6 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="absolute right-1 top-1 bottom-1 px-6 bg-primary hover:bg-primary-dark text-white font-medium rounded disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {status === 'loading' ? (
             <motion.div

@@ -47,8 +47,8 @@ export default function Navigation() {
       className={clsx(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled 
-          ? 'bg-white/95 backdrop-blur-xl shadow-lg py-2' 
-          : 'bg-gradient-to-b from-white/50 to-transparent backdrop-blur-md py-4'
+          ? 'bg-white backdrop-blur-xl shadow-lg py-2 border-b border-gray-200' 
+          : 'bg-white/90 backdrop-blur-md py-4'
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -80,7 +80,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            <div className="flex items-center bg-gray-100/50 rounded-full p-1 mr-4">
+            <div className="flex items-center bg-gray-100 rounded-full p-1 mr-4">
               {navItems.map((item, index) => (
                 <Link
                   key={item.href}
@@ -124,10 +124,9 @@ export default function Navigation() {
               <Link
                 href="/contact"
                 className="relative group"
-                aria-label="Get started with Oblinor Equity Hub"
+                aria-label="Get started with Apex Capital Partners"
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
-                <button className="relative px-5 py-2 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200" aria-label="Get started">
+                <button className="relative px-5 py-2 bg-primary hover:bg-primary-dark text-white font-medium rounded transition-all duration-200" aria-label="Get started">
                   {mounted && ready ? t('nav.getStarted') : 'Get Started'}
                 </button>
               </Link>
@@ -216,8 +215,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: navItems.length * 0.05 + 0.1 }}
                 >
-                  <div className="flex items-center justify-between px-4">
-                    <ThemeToggle />
+                  <div className="flex items-center justify-end px-4">
                     <LanguageSelector />
                   </div>
                   <Link
