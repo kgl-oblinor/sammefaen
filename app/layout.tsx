@@ -9,8 +9,8 @@ import { constructMetadata } from '@/lib/metadata'
 import { organizationSchema, websiteSchema } from '@/lib/structured-data'
 import Script from 'next/script'
 import { WebVitals } from '@/components/WebVitals'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
+// import { Analytics } from '@vercel/analytics/react'
+// import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import I18nProvider from '@/providers/I18nProvider'
 
@@ -79,8 +79,8 @@ export default function RootLayout({
             </main>
             <Footer />
             <WebVitals />
-            <Analytics />
-            <SpeedInsights />
+            {/* <Analytics /> */}
+            {/* <SpeedInsights /> */}
           </I18nProvider>
         </ThemeProvider>
         <Script
