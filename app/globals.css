@@ -59,30 +59,88 @@
     max-width: 1280px;
   }
   
-  /* Section padding */
+  /* Section padding - Konsistent spacing system */
   .section-padding {
     @apply py-16 sm:py-20 lg:py-24;
   }
   
-  /* Buttons */
+  .section-padding-sm {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+  
+  .section-padding-lg {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+  
+  /* Content spacing */
+  .content-spacing {
+    @apply space-y-4 sm:space-y-6 lg:space-y-8;
+  }
+  
+  /* Typography - Konsistent hierarki */
+  .heading-1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+  
+  .heading-3 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-semibold;
+  }
+  
+  .heading-4 {
+    @apply text-xl sm:text-2xl lg:text-3xl font-semibold;
+  }
+  
+  .body-large {
+    @apply text-lg sm:text-xl text-gray-300;
+  }
+  
+  .body-medium {
+    @apply text-base sm:text-lg text-gray-300;
+  }
+  
+  /* Buttons - Forbedret system */
   .btn {
-    @apply inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center font-medium transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black
+           disabled:opacity-50 disabled:cursor-not-allowed rounded-xl;
   }
   
   .btn-sm {
-    @apply px-3 py-1.5 text-sm;
+    @apply px-4 py-2 text-sm;
   }
   
   .btn-md {
-    @apply px-4 py-2 text-base;
+    @apply px-6 py-3 text-base;
   }
   
   .btn-lg {
-    @apply px-6 py-3 text-lg;
+    @apply px-8 py-4 text-lg;
   }
   
   .btn-xl {
-    @apply px-8 py-4 text-xl;
+    @apply px-10 py-5 text-xl;
+  }
+  
+  /* Button variants */
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary to-accent text-white
+           hover:from-primary-dark hover:to-accent-dark hover:scale-105
+           focus:ring-primary;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-white/10 backdrop-blur-md border border-white/20 text-white
+           hover:bg-white/20 hover:border-white/30 hover:scale-105
+           focus:ring-white/50;
+  }
+  
+  .btn-ghost {
+    @apply btn text-white hover:bg-white/10 hover:scale-105
+           focus:ring-white/30;
   }
   
   /* Gradients */
@@ -103,35 +161,77 @@
     @apply bg-clip-text text-transparent;
   }
   
-  /* Cards */
+  /* Cards - Konsistent design */
   .card {
-    @apply rounded-xl p-6 transition-all duration-200;
+    @apply rounded-2xl p-6 sm:p-8 transition-all duration-200;
   }
   
-  .card-bordered {
-    @apply card border;
+  .card-glass {
+    @apply card bg-white/5 backdrop-blur-xl border border-white/10
+           hover:bg-white/10 hover:border-white/20;
   }
   
-  .card-shadow {
-    @apply card shadow-lg;
+  .card-glass-primary {
+    @apply card bg-gradient-to-br from-primary/10 to-accent/5 
+           backdrop-blur-xl border border-primary/20
+           hover:from-primary/20 hover:to-accent/10 hover:border-primary/30;
   }
   
-  /* Forms */
+  .card-solid {
+    @apply card bg-gray-900 border border-gray-800
+           hover:bg-gray-800 hover:border-gray-700;
+  }
+  
+  .card-gradient {
+    @apply card bg-gradient-to-br from-gray-900/90 to-gray-800/90
+           backdrop-blur-md border border-white/10;
+  }
+  
+  /* Forms - Konsistent styling */
   .input {
-    @apply w-full rounded-lg border px-4 py-2 transition-colors duration-200 focus:outline-none focus:ring-2;
+    @apply w-full rounded-xl border px-4 py-3 bg-white/5 backdrop-blur-md
+           text-white placeholder-gray-400 transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black;
   }
   
   .input-primary {
-    @apply input border-gray-300 focus:border-primary focus:ring-primary;
+    @apply input border-white/20 focus:border-primary focus:ring-primary
+           hover:border-white/30 focus:bg-white/10;
+  }
+  
+  .input-solid {
+    @apply input bg-gray-900 border-gray-700 focus:border-primary 
+           focus:ring-primary hover:border-gray-600;
   }
   
   .label {
-    @apply block text-sm font-medium mb-2;
+    @apply block text-sm font-medium text-gray-300 mb-2;
+  }
+  
+  .form-group {
+    @apply space-y-2;
+  }
+  
+  /* Grid layouts */
+  .grid-responsive {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8;
+  }
+  
+  .grid-features {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8;
+  }
+  
+  .grid-pricing {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
   }
   
   /* Animations */
   .animate-fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
   }
   
   .animate-slide-up {
@@ -141,6 +241,13 @@
   .animate-scale-in {
     animation: scaleIn 0.3s ease-out;
   }
+  
+  /* Stagger animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
 }
 
 @layer utilities {
@@ -193,9 +300,20 @@
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes slideUp {
   from {
-    transform: translateY(20px);
+    transform: translateY(30px);
     opacity: 0;
   }
   to {

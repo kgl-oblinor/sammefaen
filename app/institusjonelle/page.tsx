@@ -8,12 +8,18 @@ import ScrollAnimation from '@/components/animations/ScrollAnimation'
 import AnimatedButton from '@/components/animations/AnimatedButton'
 import EmailSignup from '@/components/forms/EmailSignup'
 
+// UI Components
+import Button from '@/components/ui/Button'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+import Section from '@/components/ui/Section'
+
 export default function InstitutionalInvestorsPage() {
   return (
     <PageTransition>
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-background-dark">
+        <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-background-dark pt-20">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
@@ -30,14 +36,14 @@ export default function InstitutionalInvestorsPage() {
                 transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
+                <Heading as="h1" className="font-heading">
                   For{' '}
-                  <GradientText className="from-purple-500 via-orange-500 to-yellow-500">
+                  <span className="bg-gradient-to-r from-purple-500 via-orange-500 to-yellow-500 text-gradient">
                     Institusjonelle Investorer
-                  </GradientText>
-                </h1>
+                  </span>
+                </Heading>
                 
-                <p className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto">
+                <p className="body-large max-w-3xl mx-auto !text-xl md:!text-2xl">
                   Aksjehandel møter Blockchain - Én plattform, flere muligheter
                 </p>
 
@@ -50,7 +56,7 @@ export default function InstitutionalInvestorsPage() {
         </section>
 
         {/* Blockchain Integration Section */}
-        <section className="section-padding bg-gradient-to-b from-background-dark to-background relative overflow-hidden">
+        <Section className="bg-gradient-to-b from-background-dark to-background relative overflow-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
@@ -65,10 +71,10 @@ export default function InstitutionalInvestorsPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
-                    Handle aksjer med <GradientText className="from-orange-500 via-yellow-500 to-orange-400">krypto eller NOK</GradientText>
-                  </h2>
-                  <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  <Heading as="h2" className="mb-6 font-heading">
+                    Handle aksjer med <span className="bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-400 text-gradient">krypto eller NOK</span>
+                  </Heading>
+                  <p className="body-large max-w-3xl mx-auto">
                     Handle aksjer med NOK, Bitcoin, Solana eller tradisjonell valuta.
                     Alt på samme plattform - du velger hvordan du betaler.
                   </p>
@@ -77,49 +83,37 @@ export default function InstitutionalInvestorsPage() {
             </ScrollAnimation>
 
             {/* Visual Process Flow */}
-            <div className="mb-20 bg-gradient-to-r from-purple-900/10 to-orange-900/10 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-12 text-center">Velg din foretrukne betalingsmetode</h3>
+            <Card variant="gradient" className="mb-20 p-12">
+              <Heading as="h3" className="text-center mb-12 !text-2xl">Velg din foretrukne betalingsmetode</Heading>
               
               {/* Payment Methods Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                <motion.div 
-                  className="bg-green-900/30 rounded-xl p-6 border border-green-500/30 text-center"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <Card variant="glass" className="bg-green-900/20 border-green-500/30 text-center p-6">
                   <div className="text-3xl mb-3">🇳🇴</div>
                   <h4 className="text-white font-bold mb-1">Norske Kroner</h4>
                   <p className="text-gray-400 text-sm">Tradisjonell bankoverføring</p>
-                </motion.div>
+                </Card>
                 
-                <motion.div 
-                  className="bg-purple-900/30 rounded-xl p-6 border border-purple-500/30 text-center"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <Card variant="glass" className="bg-purple-900/20 border-purple-500/30 text-center p-6">
                   <div className="text-3xl mb-3">⚡</div>
                   <h4 className="text-white font-bold mb-1">Solana</h4>
                   <p className="text-gray-400 text-sm">Instant settlement</p>
-                </motion.div>
+                </Card>
                 
-                <motion.div 
-                  className="bg-orange-900/30 rounded-xl p-6 border border-orange-500/30 text-center"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <Card variant="glass" className="bg-orange-900/20 border-orange-500/30 text-center p-6">
                   <div className="text-3xl mb-3">₿</div>
                   <h4 className="text-white font-bold mb-1">Bitcoin</h4>
                   <p className="text-gray-400 text-sm">Lightning Network</p>
-                </motion.div>
+                </Card>
                 
-                <motion.div 
-                  className="bg-blue-900/30 rounded-xl p-6 border border-blue-500/30 text-center"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <Card variant="glass" className="bg-blue-900/20 border-blue-500/30 text-center p-6">
                   <div className="text-3xl mb-3">💳</div>
                   <h4 className="text-white font-bold mb-1">Kort/SEPA</h4>
                   <p className="text-gray-400 text-sm">Visa/Mastercard</p>
-                </motion.div>
+                </Card>
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-12 text-center">Slik fungerer plattformen</h3>
+              <Heading as="h3" className="text-center mb-12 !text-2xl">Slik fungerer plattformen</Heading>
               
               {/* Desktop Flow Diagram */}
               <div className="hidden md:block">
@@ -232,12 +226,12 @@ export default function InstitutionalInvestorsPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
 
             {/* Features Grid */}
             <div className="grid md:grid-cols-2 gap-12 mb-20">
               {/* Solana Column */}
-              <AnimatedCard className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 backdrop-blur-xl border border-purple-500/20 p-8">
+              <Card variant="glass-primary" className="from-purple-900/20 to-purple-800/10 border-purple-500/20">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
@@ -249,7 +243,7 @@ export default function InstitutionalInvestorsPage() {
                       <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-white ml-4">Solana Blockchain</h3>
+                  <Heading as="h3" className="ml-4 !text-2xl">Solana Blockchain</Heading>
                 </motion.div>
                 <ul className="space-y-4 text-gray-200">
                   <li className="flex items-start">
@@ -273,10 +267,10 @@ export default function InstitutionalInvestorsPage() {
                     <span><strong>SPL Tokens:</strong> Full tokenisering av aksjer</span>
                   </li>
                 </ul>
-              </AnimatedCard>
+              </Card>
 
               {/* Bitcoin Column */}
-              <AnimatedCard className="bg-gradient-to-br from-orange-900/50 to-yellow-800/30 backdrop-blur-xl border border-orange-500/20 p-8">
+              <Card variant="glass" className="bg-gradient-to-br from-orange-900/20 to-yellow-800/10 border-orange-500/20">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
@@ -288,7 +282,7 @@ export default function InstitutionalInvestorsPage() {
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-white ml-4">Bitcoin</h3>
+                  <Heading as="h3" className="ml-4 !text-2xl">Bitcoin</Heading>
                 </motion.div>
                 <ul className="space-y-4 text-gray-200">
                   <li className="flex items-start">
@@ -312,73 +306,62 @@ export default function InstitutionalInvestorsPage() {
                     <span><strong>Store handler:</strong> Perfekt for institusjonelle investorer</span>
                   </li>
                 </ul>
-              </AnimatedCard>
+              </Card>
             </div>
 
             {/* Lead Capture Forms */}
             <div className="grid md:grid-cols-2 gap-8">
               {/* Demo Request Form */}
-              <motion.div 
-                className="bg-gradient-to-br from-purple-900/20 to-purple-800/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20"
+              <Card variant="glass-primary"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <h3 className="text-2xl font-bold text-white mb-6">Book Demo</h3>
+                <Heading as="h3" className="mb-6 !text-2xl">Book Demo</Heading>
                 <p className="text-gray-300 mb-6">Se hvordan blockchain-integrasjonen fungerer for din institusjon</p>
                 <form className="space-y-4">
                   <input 
                     type="text" 
                     placeholder="Selskapsnavn" 
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                    className="input-primary"
                   />
                   <input 
                     type="email" 
                     placeholder="E-postadresse" 
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                    className="input-primary"
                   />
                   <input 
                     type="tel" 
                     placeholder="Telefonnummer" 
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                    className="input-primary"
                   />
-                  <select className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-gray-400 focus:outline-none focus:border-purple-400 transition-colors">
+                  <select className="input-primary">
                     <option>Handelsvolum per måned</option>
                     <option>Under 10 millioner NOK</option>
                     <option>10-50 millioner NOK</option>
                     <option>50-100 millioner NOK</option>
                     <option>Over 100 millioner NOK</option>
                   </select>
-                  <motion.button 
-                    type="submit"
-                    className="w-full py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-bold rounded-lg hover:from-purple-700 hover:to-purple-800 transition-all duration-200"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
+                  <Button variant="primary" size="lg" className="w-full">
                     Book Demo →
-                  </motion.button>
+                  </Button>
                 </form>
-              </motion.div>
+              </Card>
 
               {/* Pricing Request Form */}
-              <motion.div 
-                className="bg-gradient-to-br from-orange-900/20 to-yellow-800/10 backdrop-blur-xl rounded-2xl p-8 border border-orange-500/20"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <h3 className="text-2xl font-bold text-white mb-6">Få Pristilbud</h3>
+              <Card variant="glass" className="bg-gradient-to-br from-orange-900/20 to-yellow-800/10 border-orange-500/20">
+                <Heading as="h3" className="mb-6 !text-2xl">Få Pristilbud</Heading>
                 <p className="text-gray-300 mb-6">Skreddersydd prising for institusjonelle kunder</p>
                 <form className="space-y-4">
                   <input 
                     type="text" 
                     placeholder="Kontaktperson" 
-                    className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+                    className="input-primary"
                   />
                   <input 
                     type="email" 
                     placeholder="E-postadresse" 
-                    className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+                    className="input-primary"
                   />
                   <select className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-gray-400 focus:outline-none focus:border-orange-400 transition-colors">
                     <option>Type tjeneste</option>
@@ -390,21 +373,16 @@ export default function InstitutionalInvestorsPage() {
                   <textarea 
                     placeholder="Beskriv deres behov..." 
                     rows={3}
-                    className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors resize-none"
+                    className="input-primary resize-none"
                   />
-                  <motion.button 
-                    type="submit"
-                    className="w-full py-3 bg-gradient-to-r from-orange-600 to-yellow-600 text-white font-bold rounded-lg hover:from-orange-700 hover:to-yellow-700 transition-all duration-200"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
+                  <Button variant="primary" size="lg" className="w-full">
                     Få Pristilbud →
-                  </motion.button>
+                  </Button>
                 </form>
-              </motion.div>
+              </Card>
             </div>
           </div>
-        </section>
+        </Section>
       </div>
     </PageTransition>
   )

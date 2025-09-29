@@ -9,6 +9,12 @@ import GradientText from '@/components/common/GradientText'
 import AnimatedButton from '@/components/animations/AnimatedButton'
 import { staggerContainer, staggerItem } from '@/lib/animations'
 
+// New UI Components
+import Button from '@/components/ui/Button'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+import Section from '@/components/ui/Section'
+
 const features = [
   {
     category: 'Portfolio Management',
@@ -69,28 +75,17 @@ const features = [
 export default function FeaturesPage() {
   return (
     <PageTransition>
-      <div className="py-20">
-        <div className="container">
+      <Section>
           {/* Header */}
           <ScrollAnimation>
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <motion.h1 
-                className="text-4xl md:text-5xl font-bold text-oblinor-primary mb-4"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                Powerful Features for <GradientText className="from-blue-500 via-purple-500 to-pink-500">Modern PE Firms</GradientText>
-              </motion.h1>
-              <motion.p 
-                className="text-xl text-gray-600"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
+              <Heading as="h1" className="mb-4">
+                Powerful Features for <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-gradient">Modern PE Firms</span>
+              </Heading>
+              <p className="body-large">
                 Everything you need to manage your private equity operations efficiently, 
                 from deal sourcing to exit.
-              </motion.p>
+              </p>
             </div>
           </ScrollAnimation>
 
@@ -117,9 +112,9 @@ export default function FeaturesPage() {
                   >
                     {section.icon}
                   </motion.span>
-                  <h2 className="text-2xl font-bold text-oblinor-primary">
+                  <Heading as="h2" className="!text-2xl">
                     {section.category}
-                  </h2>
+                  </Heading>
                 </motion.div>
                 
                 <motion.div 
@@ -130,14 +125,14 @@ export default function FeaturesPage() {
                   viewport={{ once: true }}
                 >
                   {section.items.map((feature, index) => (
-                    <AnimatedCard
+                    <Card
                       key={feature.title}
-                      delay={index * 0.1}
-                      className="bg-white p-6 rounded-xl border border-gray-200 hover:border-oblinor-accent transition-all duration-300"
+                      variant="solid"
+                      className={`hover:border-primary transition-all duration-300 animate-fade-in-up stagger-${index + 1}`}
                     >
-                      <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </AnimatedCard>
+                      <Heading as="h4" className="mb-2 !text-lg">{feature.title}</Heading>
+                      <p className="text-gray-400">{feature.description}</p>
+                    </Card>
                   ))}
                 </motion.div>
               </motion.div>
@@ -146,24 +141,19 @@ export default function FeaturesPage() {
 
           {/* CTA */}
           <ScrollAnimation animation="fadeInScale">
-            <motion.div 
-              className="mt-20 text-center p-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            >
-              <h2 className="text-3xl font-bold text-oblinor-primary mb-4">
-                Ready to see it in <GradientText className="from-blue-500 via-purple-500 to-pink-500">action</GradientText>?
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
+            <Card variant="gradient" className="mt-20 text-center p-12 bg-gradient-to-r from-primary/10 to-accent/10">
+              <Heading as="h2" className="mb-4 !text-3xl">
+                Ready to see it in <span className="bg-gradient-to-r from-primary to-accent text-gradient">action</span>?
+              </Heading>
+              <p className="body-large mb-8">
                 Schedule a personalized demo to see how Oblinor can transform your operations.
               </p>
-              <AnimatedButton href="/demo" variant="primary">
+              <Button variant="primary" size="lg">
                 Request a Demo
-              </AnimatedButton>
-            </motion.div>
+              </Button>
+            </Card>
           </ScrollAnimation>
-        </div>
-      </div>
+      </Section>
     </PageTransition>
   )
 }

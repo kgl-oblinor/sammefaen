@@ -13,6 +13,12 @@ import ParallaxSection from '@/components/animations/ParallaxSection'
 import EmailSignup from '@/components/forms/EmailSignup'
 import { useTranslation } from 'react-i18next'
 
+// New UI Components
+import Button from '@/components/ui/Button'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+import Section from '@/components/ui/Section'
+
 // Dynamic imports for heavy components
 const FeaturesSection = dynamic(() => import('@/components/sections/FeaturesSection'), {
   loading: () => <div className="section-padding bg-background-card animate-pulse h-96" />,
@@ -26,7 +32,7 @@ export default function HomePage() {
     <PageTransition>
       <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-background-dark pt-16">
+      <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-background-dark pt-24">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
@@ -43,14 +49,14 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight">
+              <Heading as="h1" className="font-heading">
                 {t('hero.title')}{' '}
-                <GradientText className="from-blue-500 via-purple-500 to-pink-500">
+                <span className="bg-gradient-to-r from-primary to-accent text-gradient">
                   {t('hero.brandName')}
-                </GradientText>
-              </h1>
+                </span>
+              </Heading>
               
-              <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto">
+              <p className="body-large max-w-2xl mx-auto">
                 {t('hero.subtitle')}
               </p>
               
@@ -90,7 +96,7 @@ export default function HomePage() {
       </section>
 
       {/* Blockchain Integration Section */}
-      <section className="section-padding bg-gradient-to-b from-background-dark to-background relative overflow-hidden">
+      <Section className="bg-gradient-to-b from-background-dark to-background relative overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
@@ -108,10 +114,10 @@ export default function HomePage() {
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/20 to-orange-500/20 rounded-full mb-6 border border-purple-500/30">
                   <span className="text-sm font-semibold text-white">{t('blockchain.badge')}</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
-                  {t('blockchain.title')} <GradientText className="from-orange-500 via-yellow-500 to-orange-400">{t('blockchain.titleHighlight')}</GradientText>
-                </h2>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                <Heading as="h2" className="mb-6 font-heading">
+                  {t('blockchain.title')} <span className="bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-400 text-gradient">{t('blockchain.titleHighlight')}</span>
+                </Heading>
+                <p className="body-large max-w-3xl mx-auto">
                   {t('blockchain.subtitle')}
                 </p>
               </motion.div>
@@ -119,46 +125,34 @@ export default function HomePage() {
           </ScrollAnimation>
 
           {/* Visual Process Flow */}
-          <div className="mb-20 bg-gradient-to-r from-purple-900/10 to-orange-900/10 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
+          <Card variant="gradient" className="mb-20 p-12">
             <h3 className="text-2xl font-bold text-white mb-12 text-center">{t('blockchain.paymentMethodsTitle')}</h3>
             
             {/* Payment Methods Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              <motion.div 
-                className="bg-green-900/30 rounded-xl p-6 border border-green-500/30 text-center"
-                whileHover={{ scale: 1.05 }}
-              >
+              <Card variant="glass" className="bg-green-900/20 border-green-500/30 text-center p-6">
                 <div className="text-3xl mb-3">🇳🇴</div>
                 <h4 className="text-white font-bold mb-1">Norske Kroner</h4>
                 <p className="text-gray-400 text-sm">Tradisjonell bankoverføring</p>
-              </motion.div>
+              </Card>
               
-              <motion.div 
-                className="bg-purple-900/30 rounded-xl p-6 border border-purple-500/30 text-center"
-                whileHover={{ scale: 1.05 }}
-              >
+              <Card variant="glass" className="bg-purple-900/20 border-purple-500/30 text-center p-6">
                 <div className="text-3xl mb-3">⚡</div>
                 <h4 className="text-white font-bold mb-1">Solana</h4>
                 <p className="text-gray-400 text-sm">Instant settlement</p>
-              </motion.div>
+              </Card>
               
-              <motion.div 
-                className="bg-orange-900/30 rounded-xl p-6 border border-orange-500/30 text-center"
-                whileHover={{ scale: 1.05 }}
-              >
+              <Card variant="glass" className="bg-orange-900/20 border-orange-500/30 text-center p-6">
                 <div className="text-3xl mb-3">₿</div>
                 <h4 className="text-white font-bold mb-1">Bitcoin</h4>
                 <p className="text-gray-400 text-sm">Lightning Network</p>
-              </motion.div>
+              </Card>
               
-              <motion.div 
-                className="bg-blue-900/30 rounded-xl p-6 border border-blue-500/30 text-center"
-                whileHover={{ scale: 1.05 }}
-              >
+              <Card variant="glass" className="bg-blue-900/20 border-blue-500/30 text-center p-6">
                 <div className="text-3xl mb-3">💳</div>
                 <h4 className="text-white font-bold mb-1">Kort/SEPA</h4>
                 <p className="text-gray-400 text-sm">Visa/Mastercard</p>
-              </motion.div>
+              </Card>
             </div>
             
             <h3 className="text-2xl font-bold text-white mb-12 text-center">Slik fungerer plattformen</h3>
@@ -274,12 +268,12 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </Card>
 
           {/* Features Grid */}
           <div className="grid md:grid-cols-2 gap-12 mb-20">
             {/* Solana Column */}
-            <AnimatedCard className="bg-gradient-to-br from-purple-900/50 to-purple-800/30 backdrop-blur-xl border border-purple-500/20 p-8">
+            <Card variant="glass-primary" className="from-purple-900/20 to-purple-800/10 border-purple-500/20">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -291,7 +285,7 @@ export default function HomePage() {
                     <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white ml-4">Solana Blockchain</h3>
+                <Heading as="h3" className="text-white ml-4 !text-2xl">Solana Blockchain</Heading>
               </motion.div>
               <ul className="space-y-4 text-gray-200">
                 <li className="flex items-start">
@@ -311,10 +305,10 @@ export default function HomePage() {
                   <span><strong>DeFi integrasjon:</strong> Direkte tilgang til likviditet</span>
                 </li>
               </ul>
-            </AnimatedCard>
+            </Card>
 
             {/* Bitcoin Column */}
-            <AnimatedCard className="bg-gradient-to-br from-orange-900/50 to-yellow-800/30 backdrop-blur-xl border border-orange-500/20 p-8">
+            <Card variant="glass" className="bg-gradient-to-br from-orange-900/20 to-yellow-800/10 border-orange-500/20">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
@@ -324,7 +318,7 @@ export default function HomePage() {
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-yellow-600 rounded-xl flex items-center justify-center">
                   <span className="text-3xl font-bold text-white">₿</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white ml-4">Bitcoin Network</h3>
+                <Heading as="h3" className="text-white ml-4 !text-2xl">Bitcoin Network</Heading>
               </motion.div>
               <ul className="space-y-4 text-gray-200">
                 <li className="flex items-start">
@@ -344,75 +338,60 @@ export default function HomePage() {
                   <span><strong>Store handler:</strong> For institusjonelle investorer</span>
                 </li>
               </ul>
-            </AnimatedCard>
+            </Card>
           </div>
 
           {/* Lead Capture Forms */}
           <div className="grid md:grid-cols-2 gap-8">
             {/* Demo Request Form */}
-            <motion.div 
-              className="bg-gradient-to-br from-purple-900/20 to-purple-800/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              <h3 className="text-2xl font-bold text-white mb-6">Book Demo</h3>
+            <Card variant="glass-primary" className="from-purple-900/20 to-purple-800/10">
+              <Heading as="h3" className="mb-6 !text-2xl">Book Demo</Heading>
               <p className="text-gray-300 mb-6">Se hvordan blockchain-integrasjonen fungerer for din bedrift</p>
               <form className="space-y-4">
                 <input 
                   type="text" 
                   placeholder="Selskapsnavn" 
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                  className="input-primary"
                 />
                 <input 
                   type="email" 
                   placeholder="E-postadresse" 
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                  className="input-primary"
                 />
                 <input 
                   type="tel" 
                   placeholder="Telefonnummer" 
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+                  className="input-primary"
                 />
-                <select className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-lg text-gray-400 focus:outline-none focus:border-purple-400 transition-colors">
+                <select className="input-primary">
                   <option>Velg handelsvolum</option>
                   <option>Under $1M årlig</option>
                   <option>$1M - $10M årlig</option>
                   <option>$10M - $100M årlig</option>
                   <option>Over $100M årlig</option>
                 </select>
-                <motion.button 
-                  type="submit"
-                  className="w-full py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-bold rounded-lg hover:from-purple-700 hover:to-purple-900 transition-all duration-200"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
+                <Button variant="primary" size="lg" className="w-full">
                   Book Presentasjon →
-                </motion.button>
+                </Button>
               </form>
-            </motion.div>
+            </Card>
 
             {/* Pricing Request Form */}
-            <motion.div 
-              className="bg-gradient-to-br from-orange-900/20 to-orange-800/10 backdrop-blur-xl rounded-2xl p-8 border border-orange-500/20"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              <h3 className="text-2xl font-bold text-white mb-6">Få Pristilbud</h3>
+            <Card variant="glass" className="bg-gradient-to-br from-orange-900/20 to-orange-800/10 border-orange-500/20"> 
+              <Heading as="h3" className="mb-6 !text-2xl">Få Pristilbud</Heading>
               <p className="text-gray-300 mb-6">Skreddersydd prising for institusjonelle kunder</p>
               <form className="space-y-4">
                 <input 
                   type="text" 
                   placeholder="Kontaktperson" 
-                  className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+                  className="input-primary"
                 />
                 <input 
                   type="email" 
                   placeholder="E-postadresse" 
-                  className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+                  className="input-primary"
                 />
-                <select className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-gray-400 focus:outline-none focus:border-orange-400 transition-colors">
+                <select className="input-primary">
                   <option>Type tjeneste</option>
                   <option>Kun Bitcoin-handel</option>
                   <option>Kun Solana-handel</option>
@@ -422,18 +401,13 @@ export default function HomePage() {
                 <textarea 
                   placeholder="Beskriv deres behov..." 
                   rows={3}
-                  className="w-full px-4 py-3 bg-white/10 border border-orange-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors resize-none"
+                  className="input-primary resize-none"
                 />
-                <motion.button 
-                  type="submit"
-                  className="w-full py-3 bg-gradient-to-r from-orange-600 to-yellow-600 text-white font-bold rounded-lg hover:from-orange-700 hover:to-yellow-700 transition-all duration-200"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
+                <Button variant="primary" size="lg" className="w-full">
                   Få Pristilbud →
-                </motion.button>
+                </Button>
               </form>
-            </motion.div>
+            </Card>
           </div>
 
           {/* Trust Indicators */}
@@ -525,17 +499,17 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Features Section Preview */}
-      <ParallaxSection className="section-padding bg-background-card" offset={30}>
+      <Section className="bg-background-card">
         <div className="container">
           <ScrollAnimation>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                Building a More <GradientText className="from-blue-500 via-purple-500 to-pink-500">Equitable Future</GradientText>
-              </h2>
-              <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              <Heading as="h2" className="mb-4 font-heading">
+                Building a More <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-gradient">Equitable Future</span>
+              </Heading>
+              <p className="body-large max-w-2xl mx-auto">
                 Discover how Oblinor Equity Hub is revolutionizing financial access for underserved communities
               </p>
             </div>
@@ -559,10 +533,10 @@ export default function HomePage() {
                 icon: "🔒",
               },
             ].map((feature, index) => (
-              <AnimatedCard
+              <Card
                 key={index}
-                delay={index * 0.1}
-                className="card p-6 text-center"
+                variant="glass"
+                className={`text-center animate-fade-in-up stagger-${index + 1}`}
               >
                 <motion.div
                   className="text-4xl mb-4"
@@ -572,23 +546,23 @@ export default function HomePage() {
                 >
                   {feature.icon}
                 </motion.div>
-                <h3 className="text-xl font-heading font-semibold mb-2">{feature.title}</h3>
+                <Heading as="h4" className="mb-2 !text-xl">{feature.title}</Heading>
                 <p className="text-text-secondary">{feature.description}</p>
-              </AnimatedCard>
+              </Card>
             ))}
           </div>
         </div>
-      </ParallaxSection>
+      </Section>
 
       {/* Email CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary/10 to-accent/10">
+      <Section className="bg-gradient-to-r from-primary/10 to-accent/10">
         <div className="container">
           <ScrollAnimation>
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                Ready to Transform Your <GradientText>Financial Future</GradientText>?
-              </h2>
-              <p className="text-lg text-text-secondary mb-8">
+              <Heading as="h2" className="mb-4 font-heading">
+                Ready to Transform Your <span className="bg-gradient-to-r from-primary to-accent text-gradient">Financial Future</span>?
+              </Heading>
+              <p className="body-large mb-8">
                 Request a demo to see how Oblinor Equity Hub can empower your community
               </p>
               <div className="max-w-md mx-auto">
@@ -597,7 +571,7 @@ export default function HomePage() {
             </div>
           </ScrollAnimation>
         </div>
-      </section>
+      </Section>
     </div>
     </PageTransition>
   )

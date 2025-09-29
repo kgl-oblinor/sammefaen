@@ -6,6 +6,12 @@ import GradientText from '@/components/common/GradientText'
 import AnimatedCard from '@/components/animations/AnimatedCard'
 import ScrollAnimation from '@/components/animations/ScrollAnimation'
 
+// New UI Components
+import Button from '@/components/ui/Button'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+import Section from '@/components/ui/Section'
+
 export default function SolutionsPage() {
   const solutions = [
     {
@@ -111,7 +117,7 @@ export default function SolutionsPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-[#1a2332] to-[#141922] relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-b from-background-dark to-background relative overflow-hidden">
         {/* Premium Background Grid */}
         <div className="absolute inset-0 opacity-20">
           <div 
@@ -132,7 +138,7 @@ export default function SolutionsPage() {
         </div>
 
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden z-10">
+        <Section size="lg" className="relative overflow-hidden z-10">
           <div className="container relative">
             <ScrollAnimation>
               <motion.div
@@ -145,26 +151,24 @@ export default function SolutionsPage() {
                   <span className="text-sm font-semibold text-[#4DD9E8] uppercase tracking-wider">ENTERPRISE SOLUTIONS</span>
                 </div>
                 
-                <h1 className="text-5xl md:text-7xl font-black mb-8 leading-[0.9]">
-                  <span className="block text-white">Next-generation infrastructure</span>
-                  <span className="block mt-2">
-                    <GradientText className="from-[#00B4CC] via-[#4DD9E8] to-[#00B4CC]">
-                      for modern capital markets
-                    </GradientText>
+                <Heading as="h1" className="mb-8 font-black leading-[0.9] !text-5xl md:!text-7xl">
+                  <span className="block">Next-generation infrastructure</span>
+                  <span className="block mt-2 bg-gradient-to-r from-[#00B4CC] via-[#4DD9E8] to-[#00B4CC] text-gradient">
+                    for modern capital markets
                   </span>
-                </h1>
+                </Heading>
                 
-                <p className="text-xl md:text-2xl text-[#8B95A6] max-w-3xl mx-auto leading-relaxed">
+                <p className="body-large max-w-3xl mx-auto !text-xl md:!text-2xl">
                   Harness the power of AI, blockchain, and quantum computing to revolutionize 
                   how you trade, manage, and raise capital in the digital age.
                 </p>
               </motion.div>
             </ScrollAnimation>
           </div>
-        </section>
+        </Section>
 
         {/* Solutions Showcase */}
-        <section className="relative z-10 pb-32">
+        <Section size="lg" className="relative z-10">
           <div className="container">
             {solutions.map((solution, index) => (
               <motion.div
@@ -188,11 +192,11 @@ export default function SolutionsPage() {
                       <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">{solution.label}</span>
                     </div>
                     
-                    <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+                    <Heading as="h2" className="mb-6 font-black leading-tight !text-4xl md:!text-5xl">
                       {solution.title}
-                    </h2>
+                    </Heading>
                     
-                    <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                    <p className="body-medium mb-8 leading-relaxed">
                       {solution.description}
                     </p>
                     
@@ -221,8 +225,9 @@ export default function SolutionsPage() {
 
                 {/* Visual Card */}
                 <div className={`relative h-[600px] ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-2xl rounded-3xl border border-white/20 p-12 flex flex-col items-center justify-center overflow-hidden group hover:scale-105 transition-transform duration-500"
+                  <Card
+                    variant="glass"
+                    className="absolute inset-0 p-12 flex flex-col items-center justify-center overflow-hidden group hover:scale-105 transition-transform duration-500"
                     whileHover={{ rotateY: 5, rotateX: -5 }}
                     style={{ transformStyle: 'preserve-3d' }}
                   >
@@ -237,9 +242,9 @@ export default function SolutionsPage() {
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-2xl font-bold text-white mb-8 relative z-10">
+                    <Heading as="h3" className="mb-8 relative z-10 !text-2xl">
                       {solution.title.split(' ')[0]} Performance
-                    </h3>
+                    </Heading>
                     
                     {/* Stats Grid */}
                     <div className="grid grid-cols-2 gap-4 w-full relative z-10">
@@ -252,23 +257,18 @@ export default function SolutionsPage() {
                     </div>
                     
                     {/* CTA Button */}
-                    <motion.button
-                      className={`mt-8 px-8 py-4 bg-gradient-to-r ${solution.gradient} text-white font-bold rounded-full relative z-10 overflow-hidden group-hover:scale-110 transition-transform duration-300`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span className="relative z-10">{solution.cta}</span>
-                      <div className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    </motion.button>
-                  </motion.div>
+                    <Button variant="primary" size="lg" className="mt-8 relative z-10">
+                      {solution.cta}
+                    </Button>
+                  </Card>
                 </div>
               </motion.div>
             ))}
           </div>
-        </section>
+        </Section>
 
         {/* CTA Section */}
-        <section className="relative z-10 py-32 bg-gradient-to-t from-cyan-500/5 to-transparent">
+        <Section size="lg" className="relative z-10 bg-gradient-to-t from-cyan-500/5 to-transparent">
           <div className="container text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -276,42 +276,30 @@ export default function SolutionsPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-black mb-6">
-                <GradientText className="from-cyan-400 via-blue-400 to-purple-400">
-                  Ready to transform your capital operations?
-                </GradientText>
-              </h2>
-              <p className="text-xl text-gray-400 mb-12">
+              <Heading as="h2" className="mb-6 font-black !text-4xl md:!text-5xl" gradient>
+                Ready to transform your capital operations?
+              </Heading>
+              <p className="body-large mb-12">
                 Join the world's leading institutions on Oblinor
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button
-                  className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-full text-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <Button variant="primary" size="xl" className="hover:shadow-2xl hover:shadow-cyan-500/30">
                   Schedule Enterprise Demo
-                </motion.button>
-                <motion.button
-                  className="px-10 py-5 bg-transparent border-2 border-white/30 text-white font-bold rounded-full text-lg hover:bg-white/10 hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                </Button>
+                <Button variant="secondary" size="xl">
                   Download Whitepaper
-                </motion.button>
+                </Button>
               </div>
             </motion.div>
           </div>
-        </section>
+        </Section>
         {/* Infrastructure & Compliance Section */}
-        <section className="section-padding bg-gradient-to-b from-background-dark to-background">
+        <Section className="bg-gradient-to-b from-background-dark to-background">
           <div className="container">
-            <div className="bg-gradient-to-r from-blue-900/20 to-blue-800/10 backdrop-blur-xl rounded-2xl p-8 border border-blue-500/20">
-              <h2 className="text-3xl font-bold text-center mb-8">
-                <GradientText className="from-blue-400 to-cyan-400">
-                  Regulert Infrastruktur
-                </GradientText>
-              </h2>
+            <Card variant="glass" className="bg-gradient-to-r from-blue-900/20 to-blue-800/10 border-blue-500/20">
+              <Heading as="h2" className="text-center mb-8 !text-3xl" gradient>
+                Regulert Infrastruktur
+              </Heading>
               
               <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-4 mb-6">
                 <p className="text-yellow-300 text-center">
@@ -342,28 +330,24 @@ export default function SolutionsPage() {
                   <p className="text-gray-400 text-sm">Offisiell kontofører</p>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
-        </section>
+        </Section>
 
         {/* CTA Section */}
-        <section className="section-padding">
+        <Section>
           <div className="container text-center">
-            <h2 className="text-3xl font-bold mb-4">
+            <Heading as="h2" className="mb-4 !text-3xl">
               Ikke sikker på hvilken løsning som passer best?
-            </h2>
-            <p className="text-text-secondary mb-8">
+            </Heading>
+            <p className="body-medium mb-8">
               Våre eksperter hjelper deg med å finne den perfekte blockchain-løsningen for din virksomhet
             </p>
-            <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-lg hover:shadow-xl transform hover:scale-[1.05] transition-all duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <Button variant="primary" size="lg" className="hover:shadow-xl">
               Book Gratis Konsultasjon
-            </motion.button>
+            </Button>
           </div>
-        </section>
+        </Section>
       </div>
     </PageTransition>
   )

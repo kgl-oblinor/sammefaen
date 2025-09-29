@@ -1,6 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+// UI Components
+import Button from '@/components/ui/Button'
+import Card from '@/components/ui/Card'
+import Heading from '@/components/ui/Heading'
+import Section from '@/components/ui/Section'
+
 export const metadata: Metadata = {
   title: 'Pricing',
   description: 'Transparent pricing for private equity firms. Choose the plan that fits your needs.',
@@ -61,53 +67,43 @@ const plans = [
 
 export default function PricingPage() {
   return (
-    <div className="py-20">
-      <div className="container">
+    <Section>
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h1 className="text-4xl font-bold text-primary mb-4">
+          <Heading as="h1" className="mb-4">
             Simple, Transparent Pricing
-          </h1>
-          <p className="text-xl text-gray-600">
+          </Heading>
+          <p className="body-large">
             No hidden fees. No surprise charges. Just straightforward pricing that scales with your business.
           </p>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid-pricing max-w-6xl mx-auto mb-16">
           {plans.map((plan) => (
-            <div
+            <Card
               key={plan.name}
-              className={`relative rounded-2xl p-8 ${
-                plan.featured
-                  ? 'bg-oblinor-primary text-white ring-4 ring-accent scale-105'
-                  : 'bg-white border border-gray-200'
-              }`}
+              variant={plan.featured ? 'glass-primary' : 'glass'}
+              className={`relative ${plan.featured ? 'scale-105 ring-2 ring-primary' : ''}`}
             >
               {plan.featured && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-accent text-white px-4 py-1 rounded-full text-sm font-semibold">
                   Recommended
                 </span>
               )}
               <div className="mb-8">
-                <h3 className={`text-2xl font-bold mb-2 ${
-                  plan.featured ? 'text-white' : 'text-primary'
-                }`}>
+                <Heading as="h3" className="mb-2 !text-2xl">
                   {plan.name}
-                </h3>
+                </Heading>
                 <div className="flex items-baseline mb-2">
-                  <span className={`text-4xl font-bold ${
-                    plan.featured ? 'text-white' : 'text-primary'
-                  }`}>
+                  <span className="text-4xl font-bold text-white">
                     {plan.price}
                   </span>
-                  <span className={`ml-2 ${
-                    plan.featured ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
+                  <span className="ml-2 text-gray-300">
                     {plan.period}
                   </span>
                 </div>
-                <p className={plan.featured ? 'text-gray-300' : 'text-gray-600'}>
+                <p className="text-gray-300">
                   {plan.description}
                 </p>
               </div>
@@ -115,9 +111,7 @@ export default function PricingPage() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start">
                     <svg
-                      className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${
-                        plan.featured ? 'text-accent' : 'text-green-500'
-                      }`}
+                      className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5 text-primary"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -127,59 +121,51 @@ export default function PricingPage() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className={plan.featured ? 'text-gray-300' : 'text-gray-600'}>
+                    <span className="text-gray-300">
                       {feature}
                     </span>
                   </li>
                 ))}
               </ul>
-              <Link
-                href={plan.href}
-                className={`block text-center py-3 px-6 rounded-lg font-semibold transition-colors duration-200 ${
-                  plan.featured
-                    ? 'bg-white text-primary hover:bg-gray-100'
-                    : 'bg-accent text-white hover:bg-blue-600'
-                }`}
-              >
+              <Button variant={plan.featured ? 'secondary' : 'primary'} size="lg" className="w-full">
                 {plan.cta}
-              </Link>
-            </div>
+              </Button>
+            </Card>
           ))}
         </div>
 
         {/* FAQ Section */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-primary mb-12">
+          <Heading as="h2" className="text-center mb-12 !text-3xl">
             Frequently Asked Questions
-          </h2>
+          </Heading>
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <h3 className="text-lg font-semibold mb-2">Can I change plans later?</h3>
-              <p className="text-gray-600">
+            <Card variant="solid" className="mb-6">
+              <Heading as="h4" className="mb-2 !text-lg">Can I change plans later?</Heading>
+              <p className="text-gray-400">
                 Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.
               </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <h3 className="text-lg font-semibold mb-2">Is there a free trial?</h3>
-              <p className="text-gray-600">
+            </Card>
+            <Card variant="solid" className="mb-6">
+              <Heading as="h4" className="mb-2 !text-lg">Is there a free trial?</Heading>
+              <p className="text-gray-400">
                 Yes, all plans come with a 14-day free trial. No credit card required to start.
               </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <h3 className="text-lg font-semibold mb-2">What kind of support is included?</h3>
-              <p className="text-gray-600">
+            </Card>
+            <Card variant="solid" className="mb-6">
+              <Heading as="h4" className="mb-2 !text-lg">What kind of support is included?</Heading>
+              <p className="text-gray-400">
                 All plans include email support. Professional and Enterprise plans include priority support with faster response times and dedicated success managers.
               </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl border border-gray-200">
-              <h3 className="text-lg font-semibold mb-2">Do you offer discounts for annual billing?</h3>
-              <p className="text-gray-600">
+            </Card>
+            <Card variant="solid" className="mb-6">
+              <Heading as="h4" className="mb-2 !text-lg">Do you offer discounts for annual billing?</Heading>
+              <p className="text-gray-400">
                 Yes, we offer a 20% discount for annual prepayment on all plans.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
-      </div>
-    </div>
+    </Section>
   )
 }
