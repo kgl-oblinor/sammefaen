@@ -1,20 +1,24 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import PageTransition from '@/components/animations/PageTransition'
-import ScrollAnimation from '@/components/animations/ScrollAnimation'
-import AnimatedCard from '@/components/animations/AnimatedCard'
-import GradientText from '@/components/common/GradientText'
-import AnimatedButton from '@/components/animations/AnimatedButton'
-import { staggerContainer, staggerItem } from '@/lib/animations'
-
-// New UI Components
-import Button from '@/components/ui/Button'
-import Card from '@/components/ui/Card'
-import Heading from '@/components/ui/Heading'
 import Section from '@/components/ui/Section'
+import Heading from '@/components/ui/Heading'
 
+// Dynamic imports with loading states
+const FeaturesList = dynamic(() => import('@/components/features/FeaturesList'), {
+  loading: () => <div className="animate-pulse h-96 bg-background-card rounded-lg" />,
+})
+
+const FeaturesHero = dynamic(() => import('@/components/features/FeaturesHero'), {
+  loading: () => <div className="animate-pulse h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg" />,
+})
+
+export const metadata: Metadata = {
+  title: 'Features - Oblinor Equity Hub',
+  description: 'Explore our comprehensive features for portfolio management, deal tracking, and investor relations.',
+}
+
+// Server-side feature data
 const features = [
   {
     category: 'Portfolio Management',
@@ -29,26 +33,34 @@ const features = [
         description: 'Advanced analytics tools for deep financial analysis and forecasting.',
       },
       {
-        title: 'Document Management',
-        description: 'Centralized repository for all portfolio company documents and reports.',
+        title: 'Automated Reporting',
+        description: 'Generate comprehensive reports with one click for investors and stakeholders.',
+      },
+      {
+        title: 'Risk Assessment',
+        description: 'Identify and mitigate risks with our intelligent risk management system.',
       },
     ],
   },
   {
-    category: 'Deal Management',
+    category: 'Deal Flow Management',
     icon: '🤝',
     items: [
       {
-        title: 'Deal Pipeline CRM',
-        description: 'Track deals from sourcing through due diligence to closing.',
+        title: 'Deal Pipeline Tracking',
+        description: 'Manage your entire deal pipeline from sourcing to exit.',
       },
       {
-        title: 'Due Diligence Tools',
-        description: 'Streamline your due diligence process with collaborative workspaces.',
+        title: 'Due Diligence Automation',
+        description: 'Streamline due diligence with automated workflows and checklists.',
       },
       {
-        title: 'Valuation Models',
-        description: 'Built-in valuation models and scenario analysis tools.',
+        title: 'Document Management',
+        description: 'Secure, centralized repository for all deal-related documents.',
+      },
+      {
+        title: 'Collaboration Tools',
+        description: 'Real-time collaboration with team members and external advisors.',
       },
     ],
   },
@@ -58,15 +70,41 @@ const features = [
     items: [
       {
         title: 'LP Portal',
-        description: 'Secure portal for LPs to access reports and portfolio information.',
+        description: 'Dedicated portal for limited partners with real-time updates.',
       },
       {
-        title: 'Automated Reporting',
-        description: 'Generate quarterly reports and capital call notices automatically.',
+        title: 'Automated Communications',
+        description: 'Keep investors informed with automated updates and newsletters.',
       },
       {
-        title: 'Communication Hub',
-        description: 'Centralized communication platform for all investor interactions.',
+        title: 'Capital Call Management',
+        description: 'Streamline capital calls with automated workflows and tracking.',
+      },
+      {
+        title: 'Performance Reporting',
+        description: 'Share performance metrics and reports securely with investors.',
+      },
+    ],
+  },
+  {
+    category: 'Compliance & Security',
+    icon: '🔒',
+    items: [
+      {
+        title: 'Regulatory Compliance',
+        description: 'Stay compliant with built-in regulatory tracking and reporting.',
+      },
+      {
+        title: 'Data Encryption',
+        description: 'Bank-level encryption for all data in transit and at rest.',
+      },
+      {
+        title: 'Audit Trail',
+        description: 'Complete audit trail for all activities and transactions.',
+      },
+      {
+        title: 'Access Control',
+        description: 'Granular permission settings for team members and external users.',
       },
     ],
   },
@@ -75,85 +113,33 @@ const features = [
 export default function FeaturesPage() {
   return (
     <PageTransition>
-      <Section>
-          {/* Header */}
-          <ScrollAnimation>
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <Heading as="h1" className="mb-4">
-                Powerful Features for <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-gradient">Modern PE Firms</span>
-              </Heading>
-              <p className="body-large">
-                Everything you need to manage your private equity operations efficiently, 
-                from deal sourcing to exit.
-              </p>
-            </div>
-          </ScrollAnimation>
+      <div className="min-h-screen pt-20">
+        {/* Hero Section */}
+        <Section className="py-16 bg-gradient-to-br from-primary/10 to-accent/10">
+          <FeaturesHero />
+        </Section>
 
-          {/* Features Grid */}
-          {features.map((section, sectionIndex) => (
-            <ScrollAnimation key={section.category} delay={sectionIndex * 0.1}>
-              <motion.div className="mb-16">
-                <motion.div 
-                  className="flex items-center gap-3 mb-8"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}
-                >
-                  <motion.span 
-                    className="text-4xl"
-                    initial={{ rotate: -180, scale: 0 }}
-                    animate={{ rotate: 0, scale: 1 }}
-                    transition={{ 
-                      type: 'spring',
-                      stiffness: 260,
-                      damping: 20,
-                      delay: sectionIndex * 0.1 + 0.3
-                    }}
-                  >
-                    {section.icon}
-                  </motion.span>
-                  <Heading as="h2" className="!text-2xl">
-                    {section.category}
-                  </Heading>
-                </motion.div>
-                
-                <motion.div 
-                  className="grid grid-cols-1 md:grid-cols-3 gap-6"
-                  variants={staggerContainer}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                >
-                  {section.items.map((feature, index) => (
-                    <Card
-                      key={feature.title}
-                      variant="solid"
-                      className={`hover:border-primary transition-all duration-300 animate-fade-in-up stagger-${index + 1}`}
-                    >
-                      <Heading as="h4" className="mb-2 !text-lg">{feature.title}</Heading>
-                      <p className="text-gray-400">{feature.description}</p>
-                    </Card>
-                  ))}
-                </motion.div>
-              </motion.div>
-            </ScrollAnimation>
-          ))}
+        {/* Features List */}
+        <Section className="py-20">
+          <FeaturesList features={features} />
+        </Section>
 
-          {/* CTA */}
-          <ScrollAnimation animation="fadeInScale">
-            <Card variant="gradient" className="mt-20 text-center p-12 bg-gradient-to-r from-primary/10 to-accent/10">
-              <Heading as="h2" className="mb-4 !text-3xl">
-                Ready to see it in <span className="bg-gradient-to-r from-primary to-accent text-gradient">action</span>?
-              </Heading>
-              <p className="body-large mb-8">
-                Schedule a personalized demo to see how Oblinor can transform your operations.
-              </p>
-              <Button variant="primary" size="lg">
-                Request a Demo
-              </Button>
-            </Card>
-          </ScrollAnimation>
-      </Section>
+        {/* CTA Section */}
+        <Section className="py-20 bg-background-dark">
+          <div className="container text-center">
+            <Heading as="h2" className="mb-6">
+              Ready to Transform Your{' '}
+              <span className="bg-gradient-to-r from-primary to-accent text-gradient">
+                Private Equity Operations
+              </span>
+              ?
+            </Heading>
+            <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+              Join leading firms already using Oblinor Equity Hub
+            </p>
+          </div>
+        </Section>
+      </div>
     </PageTransition>
   )
 }

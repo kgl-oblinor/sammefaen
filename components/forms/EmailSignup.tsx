@@ -4,11 +4,18 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface EmailSignupProps {
-  type: 'newsletter' | 'demo'
+  type?: 'newsletter' | 'demo'
   className?: string
+  placeholder?: string
+  buttonText?: string
 }
 
-export default function EmailSignup({ type, className = '' }: EmailSignupProps) {
+export default function EmailSignup({ 
+  type = 'newsletter', 
+  className = '',
+  placeholder,
+  buttonText
+}: EmailSignupProps) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
@@ -58,16 +65,25 @@ export default function EmailSignup({ type, className = '' }: EmailSignupProps) 
     }
   }
 
+  const defaultPlaceholder = type === 'newsletter' ? 'Enter your email' : 'Your work email'
+  const defaultButtonText = type === 'newsletter' ? 'Subscribe' : 'Request Demo'
+
   return (
-    <form onSubmit={handleSubmit} className={`space-y-4 ${className}`}>
+    <form onSubmit={handleSubmit} className={`space-y-4 ${className}`} aria-label={`${type === 'newsletter' ? 'Newsletter signup' : 'Demo request'} form`}>
       <div className="relative">
+        <label htmlFor={`email-${type}`} className="sr-only">
+          {placeholder || defaultPlaceholder}
+        </label>
         <input
+          id={`email-${type}`}
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder={type === 'newsletter' ? 'Enter your email' : 'Your work email'}
+          placeholder={placeholder || defaultPlaceholder}
           className="w-full px-4 py-3 pr-32 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
           disabled={status === 'loading' || status === 'success'}
+          aria-invalid={status === 'error'}
+          aria-describedby={status === 'error' ? `error-${type}` : undefined}
         />
         <button
           type="submit"
@@ -81,7 +97,7 @@ export default function EmailSignup({ type, className = '' }: EmailSignupProps) 
               className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
             />
           ) : (
-            type === 'newsletter' ? 'Subscribe' : 'Request Demo'
+            buttonText || defaultButtonText
           )}
         </button>
       </div>
@@ -95,6 +111,9 @@ export default function EmailSignup({ type, className = '' }: EmailSignupProps) 
             className={`text-sm ${
               status === 'success' ? 'text-green-600' : 'text-red-600'
             }`}
+            role={status === 'error' ? 'alert' : 'status'}
+            id={status === 'error' ? `error-${type}` : undefined}
+            aria-live="polite"
           >
             {message}
           </motion.div>

@@ -53,11 +53,13 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="container">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-3 group" aria-label="Oblinor Equity Hub - Home">
             <motion.div 
               className="relative w-10 h-10"
               whileHover={{ scale: 1.05 }}
@@ -122,9 +124,10 @@ export default function Navigation() {
               <Link
                 href="/contact"
                 className="relative group"
+                aria-label="Get started with Oblinor Equity Hub"
               >
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-300"></div>
-                <button className="relative px-5 py-2 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
+                <button className="relative px-5 py-2 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200" aria-label="Get started">
                   {mounted && ready ? t('nav.getStarted') : 'Get Started'}
                 </button>
               </Link>
@@ -183,6 +186,8 @@ export default function Navigation() {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ delay: 0.1 }}
+                role="menu"
+                aria-label="Mobile navigation menu"
               >
                 {navItems.map((item, index) => (
                   <motion.div
@@ -221,7 +226,7 @@ export default function Navigation() {
                     className="relative group block"
                   >
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-lg blur-sm opacity-30 group-active:opacity-100 transition duration-200"></div>
-                    <button className="relative w-full px-4 py-3 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg transform active:scale-[0.98] transition-all duration-200">
+                    <button className="relative w-full px-4 py-3 bg-gradient-to-r from-primary to-primary-dark text-white font-medium rounded-lg transform active:scale-[0.98] transition-all duration-200" aria-label="Get started">
                       {mounted && ready ? t('nav.getStarted') : 'Get Started'}
                     </button>
                   </Link>

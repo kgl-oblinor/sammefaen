@@ -16,6 +16,7 @@ export default function LanguageSelector() {
       value={i18n.language}
       onChange={handleLanguageChange}
       className="bg-gray-100/50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
+      aria-label="Select language"
     >
       <option value="no">🇳🇴 NO</option>
       <option value="en">🇬🇧 EN</option>

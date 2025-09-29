@@ -1,0 +1,58 @@
+{
+  "budgets": [
+    {
+      "path": "/*",
+      "name": "Home Page",
+      "resourceSizes": [
+        {
+          "resourceType": "script",
+          "budget": 150000
+        },
+        {
+          "resourceType": "stylesheet",
+          "budget": 50000
+        },
+        {
+          "resourceType": "image",
+          "budget": 500000
+        },
+        {
+          "resourceType": "font",
+          "budget": 150000
+        },
+        {
+          "resourceType": "total",
+          "budget": 1000000
+        }
+      ],
+      "resourceCounts": [
+        {
+          "resourceType": "third-party",
+          "budget": 10
+        }
+      ]
+    }
+  ],
+  "timings": [
+    {
+      "metric": "first-contentful-paint",
+      "budget": 1000
+    },
+    {
+      "metric": "largest-contentful-paint",
+      "budget": 2500
+    },
+    {
+      "metric": "cumulative-layout-shift",
+      "budget": 0.1
+    },
+    {
+      "metric": "total-blocking-time",
+      "budget": 300
+    },
+    {
+      "metric": "time-to-interactive",
+      "budget": 3800
+    }
+  ]
+}

@@ -19,7 +19,8 @@ export default function ThemeToggle() {
         className="p-2 rounded-lg bg-background-card hover:bg-background-card-dark transition-colors duration-200"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        aria-label="Toggle theme"
+        aria-label="Theme selector loading"
+        aria-busy="true"
         disabled
       >
         <div className="w-5 h-5" />
@@ -78,6 +79,9 @@ export default function ThemeToggle() {
       `}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      aria-label={`Switch theme. Current theme: ${getThemeLabel()}`}
+      role="switch"
+      aria-checked={theme !== 'light'}
     >
       {/* Animated background effect for cyberpunk */}
       {theme === 'cyberpunk' && (
