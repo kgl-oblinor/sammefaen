@@ -24,7 +24,8 @@
       "Bash(mv:*)",
       "Bash(touch:*)",
       "Bash(npm run build:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }

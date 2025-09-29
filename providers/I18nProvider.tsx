@@ -4,10 +4,34 @@ import { useEffect, useState } from 'react'
 import i18n from 'i18next'
 import { initReactI18next, I18nextProvider } from 'react-i18next'
 
-// Translation resources - will be loaded from JSON files
+// Translation resources with fallback values
 const resources = {
-  en: { translation: {} },
-  no: { translation: {} }
+  en: { 
+    translation: {
+      nav: {
+        home: 'Home',
+        features: 'Features',
+        solutions: 'Solutions',
+        institusjonelle: 'Institutional',
+        pricing: 'Pricing',
+        contact: 'Contact',
+        getStarted: 'Get Started'
+      }
+    } 
+  },
+  no: { 
+    translation: {
+      nav: {
+        home: 'Hjem',
+        features: 'Funksjoner',
+        solutions: 'Løsninger',
+        institusjonelle: 'Institusjonelle',
+        pricing: 'Prising',
+        contact: 'Kontakt',
+        getStarted: 'Kom i gang'
+      }
+    } 
+  }
 }
 
 export default function I18nProvider({ children }: { children: React.ReactNode }) {
@@ -16,28 +40,38 @@ export default function I18nProvider({ children }: { children: React.ReactNode }
   useEffect(() => {
     const initI18n = async () => {
       try {
-        // Load translations from JSON files
-        const [noTranslations, enTranslations] = await Promise.all([
-          fetch('/locales/no/translation.json').then(r => r.json()),
-          fetch('/locales/en/translation.json').then(r => r.json())
-        ])
-        
-        resources.no.translation = noTranslations
-        resources.en.translation = enTranslations
+        // Only fetch translations on client side
+        if (typeof window !== 'undefined') {
+          // Load translations from JSON files
+          const [noTranslations, enTranslations] = await Promise.all([
+            fetch('/locales/no/translation.json').then(r => r.json()),
+            fetch('/locales/en/translation.json').then(r => r.json())
+          ])
+          
+          resources.no.translation = noTranslations
+          resources.en.translation = enTranslations
+        }
 
         // Get saved language or use default
-        const savedLang = localStorage.getItem('language') || 'no'
+        const savedLang = typeof window !== 'undefined' 
+          ? localStorage.getItem('language') || 'no'
+          : 'no'
 
-        await i18n
-          .use(initReactI18next)
-          .init({
-            resources,
-            lng: savedLang,
-            fallbackLng: 'no',
-            interpolation: {
-              escapeValue: false
-            }
-          })
+        if (!i18n.isInitialized) {
+          await i18n
+            .use(initReactI18next)
+            .init({
+              resources,
+              lng: savedLang,
+              fallbackLng: 'no',
+              interpolation: {
+                escapeValue: false
+              },
+              react: {
+                useSuspense: false
+              }
+            })
+        }
         
         setIsInitialized(true)
       } catch (error) {

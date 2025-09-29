@@ -2,8 +2,30 @@
 
 import { useTheme } from '@/contexts/ThemeContext'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 export default function ThemeToggle() {
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  // Don't use hooks until mounted to avoid SSR issues
+  if (!mounted) {
+    return (
+      <motion.button
+        className="p-2 rounded-lg bg-background-card hover:bg-background-card-dark transition-colors duration-200"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        aria-label="Toggle theme"
+        disabled
+      >
+        <div className="w-5 h-5" />
+      </motion.button>
+    )
+  }
+  
   const { theme, toggleTheme } = useTheme()
 
   const getIcon = () => {
