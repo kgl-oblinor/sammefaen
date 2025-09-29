@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
-type Theme = 'light' | 'dark' | 'cyberpunk'
+type Theme = 'light' | 'dark'
 
 interface ThemeContextType {
   theme: Theme
@@ -38,7 +38,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const root = document.documentElement
       
       // Remove all theme classes
-      root.classList.remove('light', 'dark', 'cyberpunk')
+      root.classList.remove('light', 'dark')
       
       // Add current theme class
       root.classList.add(theme)
@@ -47,39 +47,28 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem('theme', theme)
       
       // Set theme-specific CSS variables
-      if (theme === 'cyberpunk') {
-        root.style.setProperty('--primary', '#ff00ff')
-        root.style.setProperty('--primary-dark', '#cc00cc')
-        root.style.setProperty('--secondary', '#00ffff')
-        root.style.setProperty('--accent', '#ffff00')
-        root.style.setProperty('--background', '#0a0014')
-        root.style.setProperty('--background-dark', '#000000')
-        root.style.setProperty('--background-card', '#1a0033')
-        root.style.setProperty('--text-primary', '#ffffff')
-        root.style.setProperty('--text-secondary', '#00ffff')
-        root.style.setProperty('--border', '#ff00ff')
-      } else if (theme === 'dark') {
-        root.style.setProperty('--primary', '#008C9E')
-        root.style.setProperty('--primary-dark', '#006A78')
-        root.style.setProperty('--secondary', '#00B4CC')
-        root.style.setProperty('--accent', '#4DD9E8')
-        root.style.setProperty('--background', '#1a2332')
-        root.style.setProperty('--background-dark', '#141922')
-        root.style.setProperty('--background-card', '#243142')
+      if (theme === 'dark') {
+        root.style.setProperty('--primary', '#5B9BD5')
+        root.style.setProperty('--primary-dark', '#002A5C')
+        root.style.setProperty('--secondary', '#002A5C')
+        root.style.setProperty('--accent', '#5B9BD5')
+        root.style.setProperty('--background', '#1a1a1a')
+        root.style.setProperty('--background-dark', '#111111')
+        root.style.setProperty('--background-card', '#252525')
         root.style.setProperty('--text-primary', '#FFFFFF')
-        root.style.setProperty('--text-secondary', '#8B95A6')
-        root.style.setProperty('--border', '#2A3544')
+        root.style.setProperty('--text-secondary', '#CCCCCC')
+        root.style.setProperty('--border', '#333333')
       } else {
-        root.style.setProperty('--primary', '#008C9E')
-        root.style.setProperty('--primary-dark', '#006A78')
-        root.style.setProperty('--secondary', '#00B4CC')
-        root.style.setProperty('--accent', '#4DD9E8')
+        root.style.setProperty('--primary', '#5B9BD5')
+        root.style.setProperty('--primary-dark', '#002A5C')
+        root.style.setProperty('--secondary', '#002A5C')
+        root.style.setProperty('--accent', '#5B9BD5')
         root.style.setProperty('--background', '#FFFFFF')
-        root.style.setProperty('--background-dark', '#F5F7FA')
-        root.style.setProperty('--background-card', '#FFFFFF')
-        root.style.setProperty('--text-primary', '#1a2332')
-        root.style.setProperty('--text-secondary', '#5B6B7C')
-        root.style.setProperty('--border', '#E5E7EB')
+        root.style.setProperty('--background-dark', '#F5F5F5')
+        root.style.setProperty('--background-card', '#FAFAFA')
+        root.style.setProperty('--text-primary', '#000000')
+        root.style.setProperty('--text-secondary', '#666666')
+        root.style.setProperty('--border', '#E0E0E0')
       }
     }
   }, [theme, mounted])
@@ -89,10 +78,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }
 
   const toggleTheme = () => {
-    const themes: Theme[] = ['light', 'dark', 'cyberpunk']
-    const currentIndex = themes.indexOf(theme)
-    const nextIndex = (currentIndex + 1) % themes.length
-    setTheme(themes[nextIndex])
+    setTheme(theme === 'light' ? 'dark' : 'light')
   }
 
   if (!mounted) {

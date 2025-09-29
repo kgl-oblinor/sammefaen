@@ -56,13 +56,13 @@ export default function Footer() {
         <div className="border-t border-border-dark pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-text-secondary-dark text-sm">
-              © {currentYear} Oblinor Equity Hub. All rights reserved.
+              © {currentYear} Apex Capital Partners. All rights reserved.
             </p>
             
             {/* Social Links */}
             <div className="flex space-x-6">
               <a
-                href="https://twitter.com/oblinor"
+                href="https://twitter.com/apexcapital"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary-dark hover:text-accent transition-colors"
@@ -73,7 +73,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/company/oblinor"
+                href="https://linkedin.com/company/apexcapital"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary-dark hover:text-accent transition-colors"
@@ -84,7 +84,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://github.com/oblinor"
+                href="https://github.com/apexcapital"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary-dark hover:text-accent transition-colors"

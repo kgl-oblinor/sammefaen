@@ -13,90 +13,90 @@ export async function getTranslations(locale?: string) {
   const translations = {
     no: {
       hero: {
-        title: 'Invester i aksjer med',
-        brandName: 'Oblinor Equity Hub',
-        subtitle: 'Vi gir underrepresenterte samfunn tilgang til finansielle verktøy og investeringsmuligheter.',
-        emailCta: 'Meld deg på ventelisten for tidlig tilgang'
+        title: 'Fremragende innen',
+        brandName: 'Private Equity',
+        subtitle: 'Leverer overlegen avkastning gjennom disiplinerte investeringsstrategier og operasjonell ekspertise.',
+        emailCta: 'Be om investorinformasjon'
       },
       blockchain: {
-        badge: 'BLOCKCHAIN INTEGRERT',
-        title: 'Handle aksjer med',
-        titleHighlight: 'krypto eller NOK',
-        subtitle: 'Handle aksjer med NOK, Bitcoin, Solana eller tradisjonell valuta. Alt på samme plattform - du velger hvordan du betaler.',
-        paymentMethodsTitle: 'Velg din foretrukne betalingsmetode'
+        badge: 'GLOBAL REKKEVIDDE',
+        title: 'Investeringsløsninger på tvers av',
+        titleHighlight: 'alle aktivaklasser',
+        subtitle: 'Omfattende investeringsstrategier som spenner over private equity, eiendom, kreditt og offentlige markeder.',
+        paymentMethodsTitle: 'Våre investeringsområder'
       },
       benefits: {
-        title: 'Building a More',
-        titleHighlight: 'Equitable Future',
-        subtitle: 'Discover how Oblinor Equity Hub is revolutionizing financial access for underserved communities',
+        title: 'Driving Value Through',
+        titleHighlight: 'Strategic Excellence',
+        subtitle: 'Our proven approach delivers consistent, superior returns across market cycles',
         cards: [
           {
-            icon: '🛠️',
-            title: 'Accessible Tools',
-            description: 'User-friendly financial tools designed for everyone'
+            icon: '📊',
+            title: 'Data-Driven Analysis',
+            description: 'Rigorous quantitative analysis and market intelligence'
           },
           {
-            icon: '🤝',
-            title: 'Community Driven',
-            description: 'Built by the community, for the community'
+            icon: '🌍',
+            title: 'Global Network',
+            description: 'Unparalleled access to deals and strategic partnerships'
           },
           {
-            icon: '🔒',
-            title: 'Secure & Transparent',
-            description: 'Your data and investments are always protected'
+            icon: '💼',
+            title: 'Operational Excellence',
+            description: 'Hands-on value creation through operational improvements'
           }
         ]
       },
       cta: {
-        title: 'Ready to Transform Your',
-        titleHighlight: 'Financial Future',
-        subtitle: 'Request a demo to see how Oblinor Equity Hub can empower your community',
-        buttonText: 'Request Demo',
-        placeholder: 'Your work email'
+        title: 'Partner With',
+        titleHighlight: 'Industry Leaders',
+        subtitle: 'Connect with our team to explore investment opportunities',
+        buttonText: 'Contact Us',
+        placeholder: 'Your institutional email'
       }
     },
     en: {
       hero: {
-        title: 'Invest in Equity with',
-        brandName: 'Oblinor Equity Hub',
-        subtitle: 'Empowering underserved communities with accessible financial tools and investment opportunities.',
-        emailCta: 'Join our waitlist for early access'
+        title: 'Excellence in',
+        brandName: 'Private Equity',
+        subtitle: 'Delivering superior returns through disciplined investment strategies and operational excellence.',
+        emailCta: 'Request investor information'
       },
       blockchain: {
-        badge: 'BLOCKCHAIN INTEGRATED',
-        title: 'Trade stocks with',
-        titleHighlight: 'crypto or NOK',
-        subtitle: 'Trade stocks with NOK, Bitcoin, Solana or traditional currency. Everything on the same platform - you choose how you pay.',
-        paymentMethodsTitle: 'Choose your preferred payment method'
+        badge: 'GLOBAL REACH',
+        title: 'Investment solutions across',
+        titleHighlight: 'all asset classes',
+        subtitle: 'Comprehensive investment strategies spanning private equity, real estate, credit, and public markets.',
+        paymentMethodsTitle: 'Our investment verticals'
       },
       benefits: {
-        title: 'Building a More',
-        titleHighlight: 'Equitable Future',
-        subtitle: 'Discover how Oblinor Equity Hub is revolutionizing financial access for underserved communities',
+        title: 'Driving Value Through',
+        titleHighlight: 'Strategic Excellence',
+        subtitle: 'Our proven approach delivers consistent, superior returns across market cycles',
         cards: [
           {
-            icon: '🛠️',
-            title: 'Accessible Tools',
-            description: 'User-friendly financial tools designed for everyone'
+            icon: '📊',
+            title: 'Data-Driven Analysis',
+            description: 'Rigorous quantitative analysis and market intelligence'
           },
           {
-            icon: '🤝',
-            title: 'Community Driven',
-            description: 'Built by the community, for the community'
+            icon: '🌍',
+            title: 'Global Network',
+            description: 'Unparalleled access to deals and strategic partnerships'
           },
           {
-            icon: '🔒',
-            title: 'Secure & Transparent',
-            description: 'Your data and investments are always protected'
+            icon: '💼',
+            title: 'Operational Excellence',
+            description: 'Hands-on value creation through operational improvements'
           }
         ]
       },
       cta: {
-        title: 'Ready to Transform Your',
-        titleHighlight: 'Financial Future',
-        subtitle: 'Request a demo to see how Oblinor Equity Hub can empower your community',
-        buttonText: 'Request Demo',
-        placeholder: 'Your work email'
+        title: 'Partner With',
+        titleHighlight: 'Industry Leaders',
+        subtitle: 'Connect with our team to explore investment opportunities',
+        buttonText: 'Contact Us',
+        placeholder: 'Your institutional email'
       }
     }
   }

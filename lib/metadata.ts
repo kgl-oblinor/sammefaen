@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 
 export const siteConfig = {
-  name: 'Oblinor Equity Hub',
-  description: 'Streamline your private equity operations with Oblinor Equity Hub. Advanced portfolio management, deal tracking, and investor relations in one platform.',
-  url: 'https://oblinor.com',
+  name: 'Apex Capital Partners',
+  description: 'A leading global investment firm delivering superior returns through disciplined investment strategies and operational excellence across all asset classes.',
+  url: 'https://apexcapital.com',
   ogImage: '/og-image.png',
   links: {
-    twitter: 'https://twitter.com/oblinor',
-    linkedin: 'https://linkedin.com/company/oblinor',
+    twitter: 'https://twitter.com/apexcapital',
+    linkedin: 'https://linkedin.com/company/apexcapital',
   },
 }
 

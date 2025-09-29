@@ -42,29 +42,15 @@ export default function ThemeToggle() {
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
           </svg>
         )
-      case 'cyberpunk':
-        return (
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        )
     }
   }
 
   const getThemeLabel = () => {
-    switch (theme) {
-      case 'light': return 'Light'
-      case 'dark': return 'Dark'
-      case 'cyberpunk': return 'Cyber'
-    }
+    return theme === 'light' ? 'Light' : 'Dark'
   }
 
   const getThemeColor = () => {
-    switch (theme) {
-      case 'light': return 'from-yellow-400 to-orange-400'
-      case 'dark': return 'from-blue-500 to-purple-600'
-      case 'cyberpunk': return 'from-pink-500 via-purple-500 to-cyan-500'
-    }
+    return theme === 'light' ? 'from-yellow-400 to-orange-400' : 'from-blue-500 to-purple-600'
   }
 
   return (
@@ -83,12 +69,6 @@ export default function ThemeToggle() {
       role="switch"
       aria-checked={theme !== 'light'}
     >
-      {/* Animated background effect for cyberpunk */}
-      {theme === 'cyberpunk' && (
-        <div className="absolute inset-0 opacity-50">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 animate-pulse" />
-        </div>
-      )}
       
       {/* Icon container */}
       <motion.div
@@ -106,13 +86,6 @@ export default function ThemeToggle() {
         {getThemeLabel()}
       </span>
       
-      {/* Cyberpunk glitch effect */}
-      {theme === 'cyberpunk' && (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-pink-500 opacity-30 blur-xl animate-pulse" />
-          <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-cyan-500 opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-300" />
-        </>
-      )}
     </motion.button>
   )
 }
