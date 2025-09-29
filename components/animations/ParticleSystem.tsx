@@ -39,7 +39,7 @@ export default function ParticleSystem() {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute bg-oblinor-accent/20 rounded-full"
+          className="absolute bg-accent/20 rounded-full"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,

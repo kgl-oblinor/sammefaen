@@ -65,7 +65,7 @@ export default function PricingPage() {
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h1 className="text-4xl font-bold text-oblinor-primary mb-4">
+          <h1 className="text-4xl font-bold text-primary mb-4">
             Simple, Transparent Pricing
           </h1>
           <p className="text-xl text-gray-600">
@@ -80,24 +80,24 @@ export default function PricingPage() {
               key={plan.name}
               className={`relative rounded-2xl p-8 ${
                 plan.featured
-                  ? 'bg-oblinor-primary text-white ring-4 ring-oblinor-accent scale-105'
+                  ? 'bg-oblinor-primary text-white ring-4 ring-accent scale-105'
                   : 'bg-white border border-gray-200'
               }`}
             >
               {plan.featured && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-oblinor-accent text-white px-4 py-1 rounded-full text-sm font-semibold">
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">
                   Recommended
                 </span>
               )}
               <div className="mb-8">
                 <h3 className={`text-2xl font-bold mb-2 ${
-                  plan.featured ? 'text-white' : 'text-oblinor-primary'
+                  plan.featured ? 'text-white' : 'text-primary'
                 }`}>
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline mb-2">
                   <span className={`text-4xl font-bold ${
-                    plan.featured ? 'text-white' : 'text-oblinor-primary'
+                    plan.featured ? 'text-white' : 'text-primary'
                   }`}>
                     {plan.price}
                   </span>
@@ -116,7 +116,7 @@ export default function PricingPage() {
                   <li key={feature} className="flex items-start">
                     <svg
                       className={`w-5 h-5 mr-2 flex-shrink-0 mt-0.5 ${
-                        plan.featured ? 'text-oblinor-accent' : 'text-green-500'
+                        plan.featured ? 'text-accent' : 'text-green-500'
                       }`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -137,8 +137,8 @@ export default function PricingPage() {
                 href={plan.href}
                 className={`block text-center py-3 px-6 rounded-lg font-semibold transition-colors duration-200 ${
                   plan.featured
-                    ? 'bg-white text-oblinor-primary hover:bg-gray-100'
-                    : 'bg-oblinor-accent text-white hover:bg-blue-600'
+                    ? 'bg-white text-primary hover:bg-gray-100'
+                    : 'bg-accent text-white hover:bg-blue-600'
                 }`}
               >
                 {plan.cta}
@@ -149,7 +149,7 @@ export default function PricingPage() {
 
         {/* FAQ Section */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-oblinor-primary mb-12">
+          <h2 className="text-3xl font-bold text-center text-primary mb-12">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">

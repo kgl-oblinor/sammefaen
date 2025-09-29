@@ -1,12 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import fs from 'fs/promises'
-import path from 'path'
 
 const checkAuth = () => {
   const cookieStore = cookies()
   const authCookie = cookieStore.get('admin-auth')
   return authCookie?.value === 'authenticated'
+}
+
+// Store translations in memory (in production, use a database)
+const translationsStore: { [key: string]: any } = {
+  no: {
+    nav: {
+      home: 'Hjem',
+      features: 'Funksjoner',
+      solutions: 'Løsninger',
+      institusjonelle: 'Institusjonelle',
+      pricing: 'Prising',
+      contact: 'Kontakt',
+      getStarted: 'Kom i gang'
+    }
+  },
+  en: {
+    nav: {
+      home: 'Home',
+      features: 'Features',
+      solutions: 'Solutions',
+      institusjonelle: 'Institutional',
+      pricing: 'Pricing',
+      contact: 'Contact',
+      getStarted: 'Get Started'
+    }
+  }
 }
 
 export async function GET(request: NextRequest) {
@@ -18,11 +42,11 @@ export async function GET(request: NextRequest) {
   const lang = searchParams.get('lang') || 'no'
   
   try {
-    const filePath = path.join(process.cwd(), 'public', 'locales', lang, 'translation.json')
-    const content = await fs.readFile(filePath, 'utf-8')
-    return NextResponse.json(JSON.parse(content))
+    // In production, fetch from database instead
+    const translations = translationsStore[lang] || {}
+    return NextResponse.json(translations)
   } catch (error) {
-    console.error('Error reading translation file:', error)
+    console.error('Error reading translations:', error)
     return NextResponse.json({ error: 'Failed to read translations' }, { status: 500 })
   }
 }
@@ -39,11 +63,18 @@ export async function POST(request: NextRequest) {
   }
   
   try {
-    const filePath = path.join(process.cwd(), 'public', 'locales', lang, 'translation.json')
-    await fs.writeFile(filePath, JSON.stringify(translations, null, 2))
-    return NextResponse.json({ success: true })
+    // In production, save to database instead
+    translationsStore[lang] = translations
+    
+    // Note: This won't persist between serverless function invocations
+    // For production, use a database like Vercel KV, Supabase, or similar
+    
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Translations updated in memory (not persisted)' 
+    })
   } catch (error) {
-    console.error('Error writing translation file:', error)
+    console.error('Error saving translations:', error)
     return NextResponse.json({ error: 'Failed to save translations' }, { status: 500 })
   }
 }

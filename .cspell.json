@@ -1,0 +1,27 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Oblinor",
+    "institusjonelle",
+    "signup",
+    "Signup",
+    "morphism",
+    "SENDGRID",
+    "oblinor",
+    "sammefaen",
+    "Supabase",
+    "tailwindcss",
+    "lucide",
+    "framer",
+    "webmanifest",
+    "cyberpunk"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    ".git",
+    "*.log",
+    ".next",
+    "package-lock.json"
+  ]
+}
