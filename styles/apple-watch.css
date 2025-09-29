@@ -1,0 +1,279 @@
+/* Apple Watch Specific Styles */
+
+/* Apple Watch Series 3-8 (38-45mm) */
+@media 
+  (max-width: 200px),
+  (max-device-width: 200px),
+  screen and (max-device-width: 200px) and (max-device-height: 250px) {
+  
+  /* Reset and base styles */
+  * {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  body {
+    background: #000 !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    padding: 8px !important;
+  }
+  
+  /* Hide everything non-essential */
+  .section-padding,
+  .desktop-only,
+  .tablet-only,
+  .hidden-watch,
+  footer,
+  .ParticleSystem,
+  .ThemeToggle,
+  iframe,
+  video,
+  .modal,
+  .dropdown {
+    display: none !important;
+  }
+  
+  /* Ultra-compact navigation */
+  nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 30px !important;
+    background: #111 !important;
+    padding: 5px !important;
+    z-index: 999 !important;
+  }
+  
+  nav .container {
+    max-width: 100% !important;
+    padding: 0 5px !important;
+  }
+  
+  /* Logo only */
+  nav a:first-child {
+    font-size: 16px !important;
+    font-weight: bold !important;
+  }
+  
+  /* Hide nav items except logo */
+  nav .flex.items-center.space-x-1,
+  nav button {
+    display: none !important;
+  }
+  
+  /* Main content adjustments */
+  main {
+    margin-top: 35px !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+  
+  /* Simplified content */
+  .container {
+    max-width: 184px !important;
+    margin: 0 auto !important;
+    padding: 0 5px !important;
+  }
+  
+  h1 {
+    font-size: 18px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+  }
+  
+  h2 {
+    font-size: 16px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  h3 {
+    font-size: 14px !important;
+    margin-bottom: 4px !important;
+  }
+  
+  p {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* Compact buttons */
+  button,
+  .btn,
+  a[class*="btn"] {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    border-radius: 8px !important;
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 6px !important;
+    text-align: center !important;
+  }
+  
+  /* Primary CTA styling */
+  .btn-primary,
+  a[href*="contact"] button {
+    background: linear-gradient(45deg, #FF6B35, #F7931E) !important;
+    color: white !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Simplified cards */
+  .card {
+    background: #1a1a1a !important;
+    border-radius: 8px !important;
+    padding: 8px !important;
+    margin-bottom: 8px !important;
+    border: 1px solid #333 !important;
+  }
+  
+  /* Grid to single column */
+  .grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  /* Forms ultra-compact */
+  input,
+  textarea,
+  select {
+    width: 100% !important;
+    padding: 6px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+    background: #222 !important;
+    border: 1px solid #444 !important;
+    color: white !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* Hide animations */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Blockchain section specific */
+  .blockchain-section {
+    display: none !important;
+  }
+  
+  /* Show only essential info */
+  .watch-essential {
+    display: block !important;
+  }
+  
+  /* Quick action menu */
+  .watch-actions {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #111 !important;
+    padding: 8px !important;
+    display: flex !important;
+    gap: 5px !important;
+  }
+  
+  .watch-actions a {
+    flex: 1 !important;
+    padding: 8px 4px !important;
+    background: #333 !important;
+    color: white !important;
+    text-align: center !important;
+    border-radius: 6px !important;
+    font-size: 11px !important;
+    text-decoration: none !important;
+  }
+  
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: fixed !important;
+    bottom: 50px !important;
+    right: 10px !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 10px !important;
+  }
+  
+  /* Force text to be readable */
+  * {
+    color: white !important;
+  }
+  
+  /* Price display optimization */
+  .price,
+  [class*="price"] {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: #00ffff !important;
+    text-align: center !important;
+    margin: 10px 0 !important;
+  }
+  
+  /* Status indicators */
+  .status {
+    display: inline-block !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    margin-right: 4px !important;
+  }
+  
+  .status.green {
+    background: #00ff00 !important;
+  }
+  
+  .status.red {
+    background: #ff0000 !important;
+  }
+}
+
+/* Apple Watch Companion App Message */
+@supports (-webkit-touch-callout: none) {
+  @media (max-device-width: 200px) {
+    body::after {
+      content: "Open on iPhone for full experience" !important;
+      position: fixed !important;
+      bottom: 60px !important;
+      left: 10px !important;
+      right: 10px !important;
+      background: rgba(0, 0, 0, 0.8) !important;
+      color: white !important;
+      padding: 8px !important;
+      border-radius: 8px !important;
+      text-align: center !important;
+      font-size: 11px !important;
+      z-index: 1000 !important;
+    }
+  }
+}
+
+/* Force simple layout for watch */
+@media (max-width: 200px) {
+  /* Override any complex layouts */
+  body > * {
+    width: 100% !important;
+    max-width: 184px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Ensure readability */
+  :root {
+    --min-tap-size: 30px !important;
+    --text-size-min: 11px !important;
+    --spacing-unit: 4px !important;
+  }
+}

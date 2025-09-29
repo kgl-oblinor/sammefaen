@@ -5,10 +5,12 @@ import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import clsx from 'clsx'
+import ThemeToggle from '@/components/ThemeToggle'
 
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/features', label: 'Features' },
+  { href: '/solutions', label: 'Solutions' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -106,6 +108,7 @@ export default function Navigation() {
               ))}
             </div>
             <motion.div className="flex items-center gap-3">
+              <ThemeToggle />
               <Link
                 href="/contact"
                 className="relative group"

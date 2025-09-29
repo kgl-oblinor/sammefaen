@@ -103,14 +103,14 @@ export default function HomePage() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/20 to-orange-500/20 rounded-full mb-6 border border-purple-500/30">
-                  <span className="text-sm font-semibold text-white">For Institusjonelle Investorer</span>
+                  <span className="text-sm font-semibold text-white">Powered by Euronext Issuer Services</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
-                  Aksjehandel møter <GradientText className="from-orange-500 via-yellow-500 to-orange-400">Blockchain</GradientText>
+                  Én Plattform - <GradientText className="from-orange-500 via-yellow-500 to-orange-400">Flere Muligheter</GradientText>
                 </h2>
                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Revolusjonerende aksjehandel gjennom integrasjon med Solana og Bitcoin blockchain.
-                  Kjøp, selg og bytt aksjer direkte med kryptovaluta.
+                  Handle aksjer med NOK, Bitcoin, Solana eller tradisjonell valuta.
+                  Alt på samme plattform - du velger hvordan du betaler.
                 </p>
               </motion.div>
             </div>
@@ -118,7 +118,48 @@ export default function HomePage() {
 
           {/* Visual Process Flow */}
           <div className="mb-20 bg-gradient-to-r from-purple-900/10 to-orange-900/10 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-12 text-center">Slik fungerer blockchain-integrasjonen</h3>
+            <h3 className="text-2xl font-bold text-white mb-12 text-center">Velg din foretrukne betalingsmetode</h3>
+            
+            {/* Payment Methods Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+              <motion.div 
+                className="bg-green-900/30 rounded-xl p-6 border border-green-500/30 text-center"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-3xl mb-3">🇳🇴</div>
+                <h4 className="text-white font-bold mb-1">Norske Kroner</h4>
+                <p className="text-gray-400 text-sm">Tradisjonell bankoverføring</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-purple-900/30 rounded-xl p-6 border border-purple-500/30 text-center"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-3xl mb-3">⚡</div>
+                <h4 className="text-white font-bold mb-1">Solana</h4>
+                <p className="text-gray-400 text-sm">Instant settlement</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-orange-900/30 rounded-xl p-6 border border-orange-500/30 text-center"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-3xl mb-3">₿</div>
+                <h4 className="text-white font-bold mb-1">Bitcoin</h4>
+                <p className="text-gray-400 text-sm">Lightning Network</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-blue-900/30 rounded-xl p-6 border border-blue-500/30 text-center"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-3xl mb-3">💳</div>
+                <h4 className="text-white font-bold mb-1">Kort/SEPA</h4>
+                <p className="text-gray-400 text-sm">Visa/Mastercard</p>
+              </motion.div>
+            </div>
+            
+            <h3 className="text-2xl font-bold text-white mb-12 text-center">Slik fungerer plattformen</h3>
             
             {/* Desktop Flow Diagram */}
             <div className="hidden md:block">
@@ -195,37 +236,37 @@ export default function HomePage() {
               {/* Technical Details */}
               <div className="grid grid-cols-2 gap-6 mt-12">
                 <div className="bg-purple-900/20 rounded-xl p-6 border border-purple-500/20">
-                  <h5 className="text-purple-400 font-bold mb-3">Solana Integration</h5>
+                  <h5 className="text-purple-400 font-bold mb-3">Blockchain-basert</h5>
                   <div className="space-y-2">
                     <div className="flex items-center text-gray-300 text-sm">
                       <span className="text-purple-400 mr-2">→</span>
-                      <span>SPL Token Standard for aksjerepresentasjon</span>
+                      <span>Solana: SPL Tokens & instant settlement</span>
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <span className="text-purple-400 mr-2">→</span>
-                      <span>Serum DEX for likviditet</span>
+                      <span>Bitcoin: Lightning Network for speed</span>
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
                       <span className="text-purple-400 mr-2">→</span>
-                      <span>65,000 TPS kapasitet</span>
+                      <span>On-chain eierskap og transparens</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-orange-900/20 rounded-xl p-6 border border-orange-500/20">
-                  <h5 className="text-orange-400 font-bold mb-3">Bitcoin Integration</h5>
+                <div className="bg-green-900/20 rounded-xl p-6 border border-green-500/20">
+                  <h5 className="text-green-400 font-bold mb-3">Tradisjonell betaling</h5>
                   <div className="space-y-2">
                     <div className="flex items-center text-gray-300 text-sm">
-                      <span className="text-orange-400 mr-2">→</span>
-                      <span>RGB Protocol for smart contracts</span>
+                      <span className="text-green-400 mr-2">→</span>
+                      <span>NOK via norske banker</span>
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
-                      <span className="text-orange-400 mr-2">→</span>
-                      <span>Lightning for instant settlement</span>
+                      <span className="text-green-400 mr-2">→</span>
+                      <span>SEPA overføringer (EUR)</span>
                     </div>
                     <div className="flex items-center text-gray-300 text-sm">
-                      <span className="text-orange-400 mr-2">→</span>
-                      <span>Taproot for privacy</span>
+                      <span className="text-green-400 mr-2">→</span>
+                      <span>Visa/Mastercard støtte</span>
                     </div>
                   </div>
                 </div>
@@ -394,13 +435,91 @@ export default function HomePage() {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-16 text-center">
-            <p className="text-gray-400 mb-8">Trusted by leading institutions</p>
+          <div className="mt-16">
+            {/* Infrastructure Partnership Section */}
+            <div className="bg-gradient-to-r from-blue-900/20 to-blue-800/10 backdrop-blur-xl rounded-2xl p-8 border border-blue-500/20 mb-8">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                    <span className="text-3xl">🏛️</span>
+                    Regulert Infrastruktur
+                  </h3>
+                  <p className="text-gray-300 mb-4">
+                    Oblinor bruker etablert infrastruktur fra Euronext VPS og DNB Verdipapirservice som kontofører.
+                    <span className="text-yellow-400 font-semibold"> NB: Kontoførertjenester må søkes om direkte hos DNB.</span>
+                  </p>
+                  
+                  <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-4 mb-4">
+                    <p className="text-yellow-300 text-sm">
+                      <strong>⚠️ Viktig:</strong> Oblinor tilbyr ikke kontoførertjenester direkte. 
+                      Kunder må selv søke om VPS-konto hos DNB Verdipapirservice.
+                    </p>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-start">
+                      <span className="text-blue-400 mr-2">✓</span>
+                      <div>
+                        <strong className="text-white">Standard prosess</strong>
+                        <p className="text-gray-400 text-sm">Manuell søknad hos DNB for VPS-konto</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-purple-400 mr-2">⭐</span>
+                      <div>
+                        <strong className="text-white">Premium tilgang</strong>
+                        <p className="text-gray-400 text-sm">Automatisert søknadsprosess (kommer)</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-blue-400 mr-2">✓</span>
+                      <div>
+                        <strong className="text-white">Euronext VPS</strong>
+                        <p className="text-gray-400 text-sm">Vi bruker VPS-infrastruktur for handler</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-blue-400 mr-2">✓</span>
+                      <div>
+                        <strong className="text-white">DNB Verdipapirservice</strong>
+                        <p className="text-gray-400 text-sm">Offisiell kontofører (søk selv)</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 p-4 bg-purple-900/20 border border-purple-500/30 rounded-lg">
+                    <h4 className="text-purple-400 font-bold mb-2">🚀 Premium medlemskap (kommer snart)</h4>
+                    <p className="text-gray-300 text-sm">
+                      Automatisert VPS-kontosøknad direkte i plattformen. 
+                      Slipper manuell prosess hos DNB.
+                    </p>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="space-y-3">
+                    <div className="bg-white rounded-xl p-4">
+                      <svg className="w-28 h-10 mx-auto" viewBox="0 0 200 50" fill="none">
+                        <text x="10" y="35" fill="#004B87" font-family="Arial, sans-serif" font-size="24" font-weight="bold">EURONEXT</text>
+                      </svg>
+                      <p className="text-xs text-gray-600">VPS Infrastructure</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-4">
+                      <svg className="w-28 h-10 mx-auto" viewBox="0 0 200 50" fill="none">
+                        <text x="35" y="35" fill="#007272" font-family="Arial, sans-serif" font-size="28" font-weight="bold">DNB</text>
+                      </svg>
+                      <p className="text-xs text-gray-600">Verdipapirservice</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-gray-400 mb-8 text-center">Trusted by leading institutions</p>
             <div className="flex justify-center items-center gap-12 opacity-50">
-              <div className="text-gray-500 font-bold text-xl">NASDAQ</div>
-              <div className="text-gray-500 font-bold text-xl">NYSE</div>
-              <div className="text-gray-500 font-bold text-xl">LSE</div>
-              <div className="text-gray-500 font-bold text-xl">TSE</div>
+              <div className="text-gray-500 font-bold text-xl">Oslo Børs</div>
+              <div className="text-gray-500 font-bold text-xl">VPS</div>
+              <div className="text-gray-500 font-bold text-xl">Finanstilsynet</div>
+              <div className="text-gray-500 font-bold text-xl">DNB</div>
             </div>
           </div>
         </div>
