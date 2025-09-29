@@ -10,7 +10,14 @@ interface ThemeContextType {
   toggleTheme: () => void
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+// Default context value to prevent errors during SSR
+const defaultContextValue: ThemeContextType = {
+  theme: 'dark',
+  setTheme: () => {},
+  toggleTheme: () => {}
+}
+
+const ThemeContext = createContext<ThemeContextType>(defaultContextValue)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('dark')
@@ -101,16 +108,5 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
 export function useTheme() {
   const context = useContext(ThemeContext)
-  if (context === undefined) {
-    // Return default values during SSR
-    if (typeof window === 'undefined') {
-      return {
-        theme: 'dark' as Theme,
-        setTheme: () => {},
-        toggleTheme: () => {}
-      }
-    }
-    throw new Error('useTheme must be used within a ThemeProvider')
-  }
   return context
 }
