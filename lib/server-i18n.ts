@@ -31,17 +31,17 @@ export async function getTranslations(locale?: string) {
         subtitle: 'Our proven approach delivers consistent, superior returns across market cycles',
         cards: [
           {
-            icon: '📊',
+            icon: '',
             title: 'Data-Driven Analysis',
             description: 'Rigorous quantitative analysis and market intelligence'
           },
           {
-            icon: '🌍',
+            icon: '',
             title: 'Global Network',
             description: 'Unparalleled access to deals and strategic partnerships'
           },
           {
-            icon: '💼',
+            icon: '',
             title: 'Operational Excellence',
             description: 'Hands-on value creation through operational improvements'
           }
@@ -75,17 +75,17 @@ export async function getTranslations(locale?: string) {
         subtitle: 'Our proven approach delivers consistent, superior returns across market cycles',
         cards: [
           {
-            icon: '📊',
+            icon: '',
             title: 'Data-Driven Analysis',
             description: 'Rigorous quantitative analysis and market intelligence'
           },
           {
-            icon: '🌍',
+            icon: '',
             title: 'Global Network',
             description: 'Unparalleled access to deals and strategic partnerships'
           },
           {
-            icon: '💼',
+            icon: '',
             title: 'Operational Excellence',
             description: 'Hands-on value creation through operational improvements'
           }

@@ -13,21 +13,21 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-background-dark text-text-primary-dark">
+    <footer className="bg-gray-900 text-gray-100">
       <div className="container py-16">
         {/* Footer Top */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">O</span>
+              <div className="w-10 h-10 bg-primary rounded flex items-center justify-center border border-primary-dark">
+                <span className="text-background font-bold text-xl">A</span>
               </div>
-              <span className="font-heading font-bold text-xl text-white">
-                Oblinor
+              <span className="font-heading font-bold text-xl text-gray-100">
+                Apex Capital
               </span>
             </Link>
-            <p className="text-text-secondary-dark text-sm">
+            <p className="text-gray-400 text-sm">
               Empowering financial inclusion through innovative technology and community-driven solutions.
             </p>
           </div>
@@ -35,13 +35,13 @@ export default function Footer() {
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-heading font-semibold mb-4">{category}</h3>
+              <h3 className="font-heading font-semibold mb-4 text-gray-100">{category}</h3>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-text-secondary-dark hover:text-accent transition-colors text-sm"
+                      className="text-gray-400 hover:text-primary transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -53,9 +53,9 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-border-dark pt-8">
+        <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-text-secondary-dark text-sm">
+            <p className="text-gray-400 text-sm">
               © {currentYear} Apex Capital Partners. All rights reserved.
             </p>
             
@@ -65,7 +65,7 @@ export default function Footer() {
                 href="https://twitter.com/apexcapital"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary-dark hover:text-accent transition-colors"
+                className="text-gray-400 hover:text-primary transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/apexcapital"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary-dark hover:text-accent transition-colors"
+                className="text-gray-400 hover:text-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -87,7 +87,7 @@ export default function Footer() {
                 href="https://github.com/apexcapital"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary-dark hover:text-accent transition-colors"
+                className="text-gray-400 hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

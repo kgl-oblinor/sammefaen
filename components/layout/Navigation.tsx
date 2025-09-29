@@ -109,7 +109,7 @@ export default function Navigation() {
                     className={clsx(
                       'relative z-10 font-medium text-sm transition-colors duration-200',
                       isActive(item.href)
-                        ? 'text-white'
+                        ? 'text-gray-900'
                         : 'text-gray-700 hover:text-primary'
                     )}
                   >
@@ -201,7 +201,7 @@ export default function Navigation() {
                       className={clsx(
                         'block px-4 py-3 font-medium rounded-lg transition-all duration-200',
                         isActive(item.href)
-                          ? 'bg-gradient-to-r from-primary to-primary-dark text-white'
+                          ? 'bg-primary/10 text-primary-dark font-semibold'
                           : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
                       )}
                     >

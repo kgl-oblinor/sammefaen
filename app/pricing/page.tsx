@@ -87,7 +87,7 @@ export default function PricingPage() {
               className={`relative ${plan.featured ? 'scale-105 ring-2 ring-primary' : ''}`}
             >
               {plan.featured && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-accent text-white px-4 py-1 rounded-full text-sm font-semibold">
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-background px-4 py-1 rounded-full text-sm font-semibold">
                   Recommended
                 </span>
               )}
@@ -96,14 +96,14 @@ export default function PricingPage() {
                   {plan.name}
                 </Heading>
                 <div className="flex items-baseline mb-2">
-                  <span className="text-4xl font-bold text-white">
+                  <span className="text-4xl font-bold text-gray-900">
                     {plan.price}
                   </span>
-                  <span className="ml-2 text-gray-300">
+                  <span className="ml-2 text-gray-600">
                     {plan.period}
                   </span>
                 </div>
-                <p className="text-gray-300">
+                <p className="text-gray-600">
                   {plan.description}
                 </p>
               </div>
@@ -121,7 +121,7 @@ export default function PricingPage() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-gray-300">
+                    <span className="text-gray-600">
                       {feature}
                     </span>
                   </li>
@@ -142,25 +142,25 @@ export default function PricingPage() {
           <div className="space-y-6">
             <Card variant="solid" className="mb-6">
               <Heading as="h4" className="mb-2 !text-lg">Can I change plans later?</Heading>
-              <p className="text-gray-400">
+              <p className="text-gray-600">
                 Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.
               </p>
             </Card>
             <Card variant="solid" className="mb-6">
               <Heading as="h4" className="mb-2 !text-lg">Is there a free trial?</Heading>
-              <p className="text-gray-400">
+              <p className="text-gray-600">
                 Yes, all plans come with a 14-day free trial. No credit card required to start.
               </p>
             </Card>
             <Card variant="solid" className="mb-6">
               <Heading as="h4" className="mb-2 !text-lg">What kind of support is included?</Heading>
-              <p className="text-gray-400">
+              <p className="text-gray-600">
                 All plans include email support. Professional and Enterprise plans include priority support with faster response times and dedicated success managers.
               </p>
             </Card>
             <Card variant="solid" className="mb-6">
               <Heading as="h4" className="mb-2 !text-lg">Do you offer discounts for annual billing?</Heading>
-              <p className="text-gray-400">
+              <p className="text-gray-600">
                 Yes, we offer a 20% discount for annual prepayment on all plans.
               </p>
             </Card>

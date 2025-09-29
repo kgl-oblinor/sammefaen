@@ -40,7 +40,7 @@ export default function BlockchainSection({ translations }: BlockchainSectionPro
                 transition={{ duration: 0.6 }}
               >
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500/20 to-orange-500/20 rounded-full mb-6 border border-purple-500/30">
-                  <span className="text-sm font-semibold text-white">{translations.badge}</span>
+                  <span className="text-sm font-semibold text-primary-dark">{translations.badge}</span>
                 </div>
                 <Heading as="h2" className="mb-6 font-heading">
                   {translations.title} <span className="bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-400 text-gradient">{translations.titleHighlight}</span>
@@ -54,7 +54,7 @@ export default function BlockchainSection({ translations }: BlockchainSectionPro
 
           {/* Payment Methods Demo */}
           <Card variant="gradient" className="mb-20 p-12">
-            <h3 className="text-2xl font-bold text-white mb-12 text-center" role="heading" aria-level={3}>
+            <h3 className="text-2xl font-bold text-gray-900 mb-12 text-center" role="heading" aria-level={3}>
               {translations.paymentMethodsTitle}
             </h3>
             {/* BlockchainIntegrationDemo - To be implemented */}
